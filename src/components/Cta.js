@@ -23,6 +23,22 @@ const CtaStyles = styled.div`
   .cross {
     padding-right: 20px;
   }
+  /* Mobile Styles */
+  @media only screen and (max-width: 1100px) {
+    padding: 60px 10px;
+
+    .site__grid {
+      display: block;
+    }
+
+    h4 {
+      padding-bottom: 30px;
+    }
+
+    .cta__col-right {
+      width: 85%;
+    }
+  }
 `;
 
 export default function Cta() {
@@ -47,12 +63,12 @@ export default function Cta() {
         <div className="cta__inner site__grid">
           <div className="cta__col-left">
             <h1>{data.sanityCta.cta}</h1>
-            <h4>
-              <Link to={data.sanityCta.link}>
-                <span className="cross">+</span>
-                {data.sanityCta.text}
-              </Link>
-            </h4>
+            <Link to={data.sanityCta.link}>
+              <h4>
+                <span className="page__link">+</span>
+                <span className="link__text">{data.sanityCta.text}</span>
+              </h4>
+            </Link>
           </div>
           <div className="cta__col-right">
             <GatsbyImage

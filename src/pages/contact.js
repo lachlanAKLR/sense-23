@@ -55,12 +55,18 @@ const ContactStyles = styled.div`
 `;
 
 export default function ContactPage({ data }) {
+  const { title } = data.contact;
   return (
     <>
       <GlobalStyles />
-      <Nav />
+      <Nav title={title} />
       <ContactStyles>
-        <div className="contact__wrapper">
+        <div
+          data-sal="fade"
+          data-sal-easing="ease"
+          data-sal-duration="1000"
+          className="contact__wrapper"
+        >
           <div className="contact__inner">
             <div className="contact__top site__grid">
               <h2>{data.contact.title}</h2>

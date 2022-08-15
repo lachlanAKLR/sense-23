@@ -5,7 +5,9 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Logo from '../images/Sense_Logo.svg';
 
-const HomeStyles = styled.div`
+const HomeHeroStyles = styled.div`
+  z-index: 7000;
+  position: relative;
   .home__logo {
     position: absolute;
     top: 0;
@@ -43,13 +45,33 @@ const HomeStyles = styled.div`
 
   .home__bottom {
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: 80px;
     padding: 30px;
   }
 
   .home__herotext-wrapper {
     padding: 60px 30px 150px 30px;
+  }
+
+  /* Mobile Styles */
+
+  @media only screen and (max-width: 1100px) {
+    z-index: 1;
+    .home__logo {
+      padding: 40px 10px 10px 10px;
+    }
+    .home__info {
+      display: none;
+    }
+    .home__middle {
+      display: flex;
+    }
+
+    .home__bottom {
+      padding: 10px;
+      bottom: 40px;
+    }
   }
 `;
 
@@ -73,8 +95,9 @@ export default function HomeHero() {
       }
     }
   `);
+
   return (
-    <HomeStyles>
+    <HomeHeroStyles>
       <div className="home__hero-image-wrapper">
         <div className="home__hero-image-inner">
           <GatsbyImage
@@ -87,8 +110,19 @@ export default function HomeHero() {
             alt="Landing Image"
           />
           <div className="home__logo">
-            <Logo />
-            <div className="home__middle site__grid">
+            <Logo
+              data-sal="fade"
+              data-sal-delay="500"
+              data-sal-easing="ease"
+              data-sal-duration="1500"
+            />
+            <div
+              data-sal="fade"
+              data-sal-delay="1000"
+              data-sal-easing="ease"
+              data-sal-duration="2000"
+              className="home__middle site__grid"
+            >
               <div className="home__info">
                 <h4>Sense Construction</h4>
                 <h4>ABN: {data.sanitySiteSettings.abn}</h4>
@@ -109,7 +143,13 @@ export default function HomeHero() {
               </div>
             </div>
           </div>
-          <div className="home__bottom site__grid">
+          <div
+            data-sal="fade"
+            data-sal-delay="1000"
+            data-sal-easing="ease"
+            data-sal-duration="2000"
+            className="home__bottom site__grid"
+          >
             <div className="home__construction">
               <h4>Contruction</h4>
             </div>
@@ -117,13 +157,8 @@ export default function HomeHero() {
               <h4>Done Consciously</h4>
             </div>
           </div>
-          <div className="home__herotext-wrapper">
-            <div className="home_herotext">
-              <h1>{data.sanityHome.herotext}</h1>
-            </div>
-          </div>
         </div>
       </div>
-    </HomeStyles>
+    </HomeHeroStyles>
   );
 }

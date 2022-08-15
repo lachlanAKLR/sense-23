@@ -36,7 +36,6 @@ export default function ContactForm() {
             />
           </label>
           <button type="submit">Submit +</button>
-          {/* <input type="reset" value="Clear" /> */}
         </form>
       </div>
     </div>

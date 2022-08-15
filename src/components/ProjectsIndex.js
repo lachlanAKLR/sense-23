@@ -83,8 +83,66 @@ const IndexStyles = styled.div`
     grid-column-end: 11;
   }
 
-  .hidden {
-    display: none;
+  .hide {
+    display: none !important;
+  }
+  /* Mobile Styles */
+  @media only screen and (max-width: 1100px) {
+    padding: 10px;
+    .tab-list-item {
+      padding: 5px 10px;
+    }
+    .tab-list {
+      padding-bottom: 0;
+    }
+    .index__item {
+      padding-top: 15px;
+    }
+    .site__grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .index__details {
+      padding-bottom: 20px !important;
+    }
+    h3 {
+      bottom: 2px;
+    }
+    li {
+      padding: 7.5px 0;
+    }
+    li:nth-child(1) {
+      width: 70%;
+      order: 0;
+    }
+    li:nth-child(2) {
+      order: 3;
+      width: 100%;
+    }
+    li:nth-child(3) {
+      order: 4;
+      width: 100%;
+    }
+    li:nth-child(5) {
+      order: 1;
+      width: 30%;
+    }
+    li:nth-child(4) {
+      display: none;
+    }
+    .index__more {
+      padding-bottom: 15px;
+    }
+    .index__image {
+      padding-bottom: 15px;
+    }
+    .index__more p {
+      padding-bottom: 15px;
+    }
+    .tab-list li {
+      width: auto !important;
+    }
   }
 `;
 
@@ -121,7 +179,7 @@ function IndexItem({ project }) {
       </ul>
       <div
         className={
-          isActive ? 'index__more site__grid' : 'index__more site__grid  hidden'
+          isActive ? 'index__more site__grid' : 'index__more site__grid  hide'
         }
       >
         <p>
@@ -133,9 +191,7 @@ function IndexItem({ project }) {
       </div>
       <div
         className={
-          isActive
-            ? 'index__image site__grid'
-            : 'index__image site__grid hidden'
+          isActive ? 'index__image site__grid' : 'index__image site__grid hide'
         }
       >
         <GatsbyImage

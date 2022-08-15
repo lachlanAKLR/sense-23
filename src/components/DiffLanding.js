@@ -60,8 +60,21 @@ export default function DiffLanding({ content }) {
               </div>
               <div className="diff__title">
                 <div className="diff__title-inner">
-                  <h1>{content.heading}</h1>
-                  <div className="diff__title-bottom">
+                  <h1
+                    data-sal="slide-up"
+                    data-sal-delay="300"
+                    data-sal-easing="ease"
+                    data-sal-duration="1000"
+                  >
+                    {content.heading}
+                  </h1>
+                  <div
+                    data-sal="slide-up"
+                    data-sal-delay="1000"
+                    data-sal-easing="ease"
+                    data-sal-duration="1000"
+                    className="diff__title-bottom"
+                  >
                     <h4>Construction, done consciously</h4>
                     <ul>
                       {content.details.map((detail) => (

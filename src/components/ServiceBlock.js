@@ -45,11 +45,6 @@ const ServiceBlockStyles = styled.div`
   li:before {
     content: '+ ';
   }
-  .hidden {
-    height: 0px;
-    opacity: 0;
-    pointer-events: none;
-  }
   .service__content p,
   ul {
     padding-bottom: 20px;
@@ -65,10 +60,14 @@ function SingleService({ service }) {
     <div className="service__wrapper">
       <div className="service__inner">
         <div className="service__title">
-          <p>{service.title}</p>
+          <button type="button" onClick={handleClick}>
+            <p>{service.title}</p>
+          </button>
         </div>
         <div
-          className={isActive ? 'service__content' : 'service__content hidden'}
+          className={
+            isActive ? 'service__content visible' : 'service__content hidden'
+          }
         >
           <PortableText value={service._rawContent} />
         </div>
@@ -92,7 +91,12 @@ export default function ServiceBlock({
     <ServiceBlockStyles>
       <div className="serviceblock__wrapper">
         <div className="serviceblock__inner">
-          <div className="service__type">
+          <div
+            data-sal="fade"
+            data-sal-easing="ease"
+            data-sal-duration="1000"
+            className="service__type"
+          >
             <div className="service__type-inner site__grid">
               <div className="service__image">
                 <GatsbyImage
@@ -109,7 +113,12 @@ export default function ServiceBlock({
               </div>
             </div>
           </div>
-          <div className="service__type">
+          <div
+            data-sal="fade"
+            data-sal-easing="ease"
+            data-sal-duration="1000"
+            className="service__type"
+          >
             <div className="service__type-inner site__grid">
               <div className="service__image">
                 <GatsbyImage
@@ -126,7 +135,12 @@ export default function ServiceBlock({
               </div>
             </div>
           </div>
-          <div className="service__type">
+          <div
+            data-sal="fade"
+            data-sal-easing="ease"
+            data-sal-duration="1000"
+            className="service__type"
+          >
             <div className="service__type-inner site__grid">
               <div className="service__image">
                 <GatsbyImage

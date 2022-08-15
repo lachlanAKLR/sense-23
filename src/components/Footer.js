@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const FooterStyles = styled.div`
   padding: 30px 30px;
   .footer__inner {
+    border-top: 0.5px solid black;
     padding-top: 50px;
     display: flex;
     flex-direction: column;
@@ -34,6 +35,47 @@ const FooterStyles = styled.div`
   a {
     font-family: Remington;
     text-transform: uppercase;
+  }
+
+  .footer__links a,
+  .footer__links li {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  /* Mobile Styles */
+  @media only screen and (max-width: 1100px) {
+    padding: 30px 10px;
+
+    .site__grid {
+      display: block;
+    }
+
+    .footer__name,
+    .footer__abn,
+    .footer__acc {
+      padding-bottom: 30px;
+    }
+
+    .footer__acc {
+      width: 100%;
+    }
+
+    .footer__links,
+    .footer__credit {
+      width: 50%;
+    }
+
+    .footer__bottom {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .footer__back {
+      position: relative;
+      bottom: 0;
+    }
   }
 `;
 
@@ -90,10 +132,10 @@ export default function Footer() {
           </div>
           <div className="footer__bottom site__grid">
             <h4 className="footer__acc">
-              WE ACKNOWLEDGE THE DARKINYUNG PEOPLE OF THE DARKINJUNG LAND  AS
-              THE TRADITIONAL CUSTODIANS OF THE COUNTRY we OPERATE ON.  WE PAY
-              OUR RESPECTS TO ELDERS PAST, PRESENT AND emerging,  and EXTEND
-              THAT RESPECT TO ALL FIRST NATIONS PEOPLE.
+              WE ACKNOWLEDGE THE DARKINYUNG PEOPLE OF THE DARKINJUNG LAND AS THE
+              TRADITIONAL CUSTODIANS OF THE COUNTRY we OPERATE ON. WE PAY OUR
+              RESPECTS TO ELDERS PAST, PRESENT AND emerging, and EXTEND THAT
+              RESPECT TO ALL FIRST NATIONS PEOPLE.
             </h4>
             <div className="footer__links">
               <ul>

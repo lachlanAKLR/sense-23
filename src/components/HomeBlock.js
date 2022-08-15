@@ -34,13 +34,61 @@ const HomeBlockStyles = styled.div`
   p {
     padding-bottom: 30px;
   }
+  .mobile-image__wrapper {
+    display: none;
+  }
+  .image__wrapper {
+    display: block;
+  }
+
+  /* Mobile Styles */
+  @media only screen and (max-width: 1100px) {
+    padding: 30px 10px 50px 10px;
+
+    .block__inner {
+      flex-direction: column;
+    }
+    .content__inner {
+      padding: 0;
+    }
+    .image__wrapper,
+    .content__wrapper {
+      width: 100%;
+    }
+
+    .content__wrapper {
+      display: block;
+    }
+
+    .image__wrapper {
+      display: none;
+    }
+
+    .mobile-image__wrapper {
+      display: block;
+      padding-bottom: 30px;
+    }
+
+    .content__top h4 {
+      padding-bottom: 20px;
+    }
+
+    .content__top h1 {
+      padding-bottom: 30px;
+    }
+  }
 `;
 
 function BlockContent({ block, raw }) {
   const layoutPosition = block.position;
   if (layoutPosition) {
     return (
-      <div className="block__inner block__swap">
+      <div
+        data-sal="slide-up"
+        data-sal-easing="ease"
+        data-sal-duration="1000"
+        className="block__inner block__swap"
+      >
         <div className="image__wrapper">
           <GatsbyImage
             image={block.image.asset.gatsbyImageData}
@@ -58,12 +106,33 @@ function BlockContent({ block, raw }) {
               <Link to={block.link}>
                 <h4>{block.subheading}</h4>
               </Link>
-              <h1>{block.heading}</h1>
+              <h1
+                data-sal="slide-right"
+                data-sal-delay="1000"
+                data-sal-easing="ease"
+                data-sal-duration="1000"
+              >
+                {block.heading}
+              </h1>
+              <div className="mobile-image__wrapper">
+                <GatsbyImage
+                  image={block.image.asset.gatsbyImageData}
+                  alt={`image of ${block.heading}`}
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    objectFit: 'cover',
+                  }}
+                />
+              </div>
             </div>
             <div className="content__bottom">
               <PortableText value={raw.content} />
               <Link to={block.link}>
-                <h4>More +</h4>
+                <h4>
+                  <span className="page__link">+</span>
+                  <span className="link__text">More</span>
+                </h4>
               </Link>
             </div>
           </div>
@@ -72,7 +141,12 @@ function BlockContent({ block, raw }) {
     );
   }
   return (
-    <div className="block__inner">
+    <div
+      data-sal="slide-up"
+      data-sal-easing="ease"
+      data-sal-duration="1000"
+      className="block__inner"
+    >
       <div className="image__wrapper">
         <GatsbyImage
           image={block.image.asset.gatsbyImageData}
@@ -90,12 +164,33 @@ function BlockContent({ block, raw }) {
             <Link to={block.link}>
               <h4>{block.subheading}</h4>
             </Link>
-            <h1>{block.heading}</h1>
+            <h1
+              data-sal="slide-left"
+              data-sal-delay="1000"
+              data-sal-easing="ease"
+              data-sal-duration="1000"
+            >
+              {block.heading}
+            </h1>
+            <div className="mobile-image__wrapper">
+              <GatsbyImage
+                image={block.image.asset.gatsbyImageData}
+                alt={`image of ${block.heading}`}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'cover',
+                }}
+              />
+            </div>
           </div>
           <div className="content__bottom">
             <PortableText value={raw.content} />
             <Link to={block.link}>
-              <h4>More +</h4>
+              <h4>
+                <span className="page__link">+</span>
+                <span className="link__text">More</span>
+              </h4>
             </Link>
           </div>
         </div>

@@ -117,6 +117,42 @@ const ProjectsGridStyles = styled.div`
     grid-column-end: 13;
     padding-top: 150px;
   }
+
+  /* Mobile Styles */
+  @media only screen and (max-width: 1100px) {
+    padding: 30px 0 30px 0;
+    .site__grid {
+      display: block;
+    }
+    h2,
+    .projects__left {
+      padding-bottom: 30px;
+    }
+    .grid__sector {
+      padding-top: 0px;
+    }
+    h2 {
+      padding-left: 10px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+    .grid__project:nth-child(2) {
+      padding-left: 15%;
+    }
+    .grid__project:nth-child(3) {
+      padding-top: 80px;
+      padding-right: 5%;
+    }
+    .grid__project:nth-child(3) h3 {
+      padding-left: 10px;
+    }
+    .grid__project:nth-child(4) {
+      padding-top: 80px;
+      padding-right: 5%;
+      padding-left: 20%;
+    }
+  }
 `;
 
 function SingleProject({ project }) {

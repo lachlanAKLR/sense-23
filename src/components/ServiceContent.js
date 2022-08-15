@@ -48,7 +48,12 @@ export default function ServiceContent({ content }) {
     <ServiceContentStyles>
       <div className="content__wrapper">
         <div className="content__inner">
-          <div className="content__left">
+          <div
+            data-sal="fade"
+            data-sal-easing="ease"
+            data-sal-duration="1000"
+            className="content__left"
+          >
             <div className="content__top">
               <h2>{content.heading}</h2>
               <h4>{content.subheading}</h4>

@@ -35,19 +35,49 @@ const NavStyles = styled.div`
     width: 100%;
     background: var(--grey);
     transition-timing-function: ease;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out 0.5s;
     z-index: 99;
   }
   .overlay__active {
     top: 0;
     left: 0;
+    transition: all 0.5s ease-in-out;
   }
   .hidden {
     opacity: 0;
   }
+
+  .overlay__menu {
+    opacity: 0;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  .items__visible {
+    opacity: 1;
+    transition: all 0.5s ease-in-out 0.5s;
+  }
+
+  /* Mobile Styles */
+
+  @media only screen and (max-width: 1100px) {
+    .header__nav {
+      padding: 10px;
+    }
+    .overlay__wrapper {
+      padding: 50px 10px;
+    }
+    li {
+      padding: 10px 0;
+    }
+    .site__grid {
+      display: flex;
+    }
+    .header__page-title {
+      width: 50%;
+    }
+  }
 `;
 
-export default function Nav() {
+export default function Nav({ title }) {
   const [isActive, setIsActive] = useState(false);
   const handleClick = (event) => {
     setIsActive((current) => !current);
@@ -65,7 +95,7 @@ export default function Nav() {
             </div>
             <div className="header__button">{isActive ? 'close' : 'menu'}</div>
           </button>
-          <h4 className="header__page-title">Page Title</h4>
+          <h4 className="header__page-title">{title}</h4>
         </div>
       </div>
       <div
@@ -74,7 +104,11 @@ export default function Nav() {
         }
       >
         <div className="overlay__inner">
-          <div className="overlay__menu">
+          <div
+            className={
+              isActive ? 'overlay__menu items__visible' : 'overlay__menu'
+            }
+          >
             <ul>
               <li>
                 <h1>

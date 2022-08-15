@@ -11,11 +11,12 @@ export default function ServicesPage({ data }) {
   const floorServices = data.floorServices.nodes;
   const groutingServices = data.groutingServices.nodes;
   const { content } = data;
+  const title = content.pageTitle;
 
   return (
     <>
       <GlobalStyles />
-      <Nav />
+      <Nav title={title} />
       <ServiceContent content={content} />
       <ServiceBlock
         doorServices={doorServices}
@@ -62,6 +63,7 @@ export const query = graphql`
     }
     content: sanityServicesPage {
       heading
+      pageTitle
       image {
         asset {
           gatsbyImageData
@@ -69,7 +71,6 @@ export const query = graphql`
       }
       _rawServiceContent
       subheading
-      firstSubheading
       firstText
       firstImage {
         asset {

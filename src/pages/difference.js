@@ -9,10 +9,11 @@ import Layouts from '../components/Layouts';
 export default function DifferencePage({ data }) {
   const { content } = data;
   const { layouts, _rawLayouts } = content;
+  const title = content.pageTitle;
   return (
     <>
       <GlobalStyles />
-      <Nav />
+      <Nav title={title} />
       <DiffLanding content={content} />
       <Layouts layouts={layouts} _rawLayouts={_rawLayouts} />
       <Footer />
@@ -24,6 +25,7 @@ export const query = graphql`
   query {
     content: sanityDifference {
       _rawLayouts(resolveReferences: { maxDepth: 10 })
+      pageTitle
       details
       heading
       image {

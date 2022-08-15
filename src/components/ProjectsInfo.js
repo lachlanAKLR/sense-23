@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
+import { PortableText } from '@portabletext/react';
 
 const ProjectsInfoStyles = styled.div`
   padding: 140px 30px 110px 30px;
@@ -15,6 +16,18 @@ const ProjectsInfoStyles = styled.div`
   .projects__right {
     grid-column: span 5;
   }
+
+  /* Mobile Styles */
+  @media only screen and (max-width: 1100px) {
+    padding: 85px 10px 30px 10px;
+    .site__grid {
+      display: block;
+    }
+    h2,
+    .projects__left {
+      padding-bottom: 30px;
+    }
+  }
 `;
 
 export default function ProjectsInfo() {
@@ -23,11 +36,10 @@ export default function ProjectsInfo() {
       info: sanityProjects {
         headline
         details
-        description
+        _rawContent
       }
     }
   `);
-  console.log(data);
   return (
     <ProjectsInfoStyles>
       <div className="projects__info-wrapper">
@@ -43,7 +55,7 @@ export default function ProjectsInfo() {
             </ul>
           </div>
           <div className="projects__right">
-            <p>{data.info.description}</p>
+            <PortableText value={data.info._rawContent} />
           </div>
         </div>
       </div>

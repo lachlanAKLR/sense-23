@@ -1,7 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { PortableText } from '@portabletext/react';
 import GlobalStyles from '../styles/GlobalStyles';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
@@ -21,6 +22,7 @@ const ProjectStyles = styled.div`
 
   .project__title-inner {
     height: 100%;
+    padding-top: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -68,14 +70,40 @@ const ProjectStyles = styled.div`
     padding: 20px 0;
     border-top: 0.5px solid black;
   }
+  .projects__link {
+    position: fixed;
+    z-index: 7000;
+    top: 30px;
+  }
+  p {
+    text-indent: 60px;
+    max-width: 500px;
+  }
+
+  p:first-of-type {
+    text-indent: 0;
+  }
+  @media only screen and (max-width: 1100px) {
+    .site__grid {
+      display: block;
+    }
+    .project__image,
+    .project__title {
+      width: 100%;
+    }
+    .project__landing {
+      flex-direction: column;
+    }
+  }
 `;
 
 export default function ProjectPage({ data }) {
   const moreProjects = data.moreProjects.nodes;
+  const { title } = data.project;
   return (
     <>
       <GlobalStyles />
-      <Nav />
+      <Nav title={title} />
       <ProjectStyles>
         <div className="project__wrapper">
           <div className="project__inner">
@@ -96,9 +124,26 @@ export default function ProjectPage({ data }) {
               </div>
               <div className="project__title">
                 <div className="project__title-inner">
-                  <h4> All Projects </h4>
-                  <h1>{data.project.title}</h1>
-                  <div className="project__title-bottom">
+                  <div className="projects__link">
+                    <Link to="/projects">
+                      <h4>All Projects</h4>
+                    </Link>
+                  </div>
+                  <h1
+                    data-sal="slide-up"
+                    data-sal-delay="300"
+                    data-sal-easing="ease"
+                    data-sal-duration="1000"
+                  >
+                    {data.project.title}
+                  </h1>
+                  <div
+                    data-sal="slide-up"
+                    data-sal-delay="1000"
+                    data-sal-easing="ease"
+                    data-sal-duration="1000"
+                    className="project__title-bottom"
+                  >
                     <h4>
                       Builder:
                       <br />
@@ -134,7 +179,7 @@ export default function ProjectPage({ data }) {
                   </ul>
                 </div>
                 <div className="project__desc-right">
-                  <p>{data.project.description}</p>
+                  <PortableText value={data.project._rawContent} />
                 </div>
               </div>
             </div>
@@ -155,6 +200,7 @@ export const query = graphql`
       work
       location
       description
+      _rawContent
       credit
       completion
       builder

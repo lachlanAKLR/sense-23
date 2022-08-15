@@ -11,10 +11,11 @@ export default function ProjectsPage({ data }) {
   const commercialProjects = data.commercialProjects.nodes;
   const civilProjects = data.civilProjects.nodes;
   const resProjects = data.resProjects.nodes;
+  const title = data.sanityProjects.pageTitle;
   return (
     <>
       <GlobalStyles />
-      <Nav />
+      <Nav title={title} />
       <ProjectsInfo />
       <ProjectsGrid
         commercialProjects={commercialProjects}
@@ -101,6 +102,9 @@ export const query = graphql`
           current
         }
       }
+    }
+    sanityProjects {
+      pageTitle
     }
   }
 `;

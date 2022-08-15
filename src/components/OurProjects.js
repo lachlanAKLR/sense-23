@@ -43,6 +43,32 @@ const OurProjectStyles = styled.div`
   p {
     padding-bottom: 30px;
   }
+  /* Mobile Styles */
+  @media only screen and (max-width: 1100px) {
+    padding: 30px 0;
+    .site__grid {
+      display: block;
+    }
+    .op__top {
+      padding: 10px 10px 40px 10px;
+    }
+    .op__title h4 {
+      padding-bottom: 20px;
+    }
+    .op__title h1 {
+      padding-bottom: 20px;
+    }
+    .op__text p {
+      padding: 0 0 20px 0;
+    }
+    .op__project {
+      padding-left: 10px;
+      width: 85%;
+    }
+    .op__project p {
+      padding: 20px 0;
+    }
+  }
 `;
 
 function SingleProject({ project }) {
@@ -83,7 +109,10 @@ export default function OurProjects({ ourProjects }) {
         <div className="op__text">
           <p>{data.sanityHome.projectsText}</p>
           <Link to="/projects">
-            <h4>See More +</h4>
+            <h4>
+              <span className="page__link">+</span>
+              <span className="link__text">See More</span>
+            </h4>
           </Link>
         </div>
       </div>

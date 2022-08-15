@@ -4,9 +4,10 @@ import GlobalStyles from '../styles/GlobalStyles';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 import Cta from '../components/Cta';
-import HomeHero from '../components/Home';
+import HomeHero from '../components/HomeHero';
 import OurProjects from '../components/OurProjects';
 import Layouts from '../components/Layouts';
+import HeroText from '../components/HeroText';
 
 export default function HomePage({ data }) {
   const ourProjects = data.ourProjects.nodes;
@@ -17,6 +18,7 @@ export default function HomePage({ data }) {
       <GlobalStyles />
       <Nav />
       <HomeHero />
+      <HeroText />
       <Layouts layouts={layouts} _rawLayouts={_rawLayouts} />
       <OurProjects ourProjects={ourProjects} />
       <Cta />
