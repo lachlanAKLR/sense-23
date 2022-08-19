@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import GlobalStyles from '../styles/GlobalStyles';
-import Nav from './Nav';
 
 const ProjectStyles = styled.div`
   .diff__landing {
@@ -36,13 +35,37 @@ const ProjectStyles = styled.div`
     width: calc(50% - 15px);
     height: 100%;
   }
+
+  @media only screen and (max-width: 1100px) {
+    .diff__landing {
+      flex-direction: column;
+    }
+    .diff__title {
+      width: 100%;
+      padding: 10px;
+      position: absolute;
+      bottom: 0%;
+      height: 250px;
+    }
+    .gatsby-image-wrapper {
+      height: calc(100vh - 250px) !important;
+    }
+    .diff__image {
+      width: 100%;
+    }
+    .diff__title-bottom {
+      flex-direction: column;
+    }
+    .diff__title-bottom ul {
+      width: 100%;
+    }
+  }
 `;
 
 export default function DiffLanding({ content }) {
   return (
     <>
       <GlobalStyles />
-      <Nav />
       <ProjectStyles>
         <div className="diff__wrapper">
           <div className="diff__inner">

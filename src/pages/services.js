@@ -71,6 +71,7 @@ export const query = graphql`
       }
       _rawServiceContent
       subheading
+      firstSubheading
       firstText
       firstImage {
         asset {

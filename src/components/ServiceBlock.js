@@ -49,6 +49,58 @@ const ServiceBlockStyles = styled.div`
   ul {
     padding-bottom: 20px;
   }
+  .mobile__header {
+    display: none;
+  }
+  .service__type-content h2 {
+    display: block;
+  }
+
+  .service__wrapper:last-child {
+    border-bottom: 0.5px solid black;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .site__grid {
+      display: block;
+    }
+    .serviceblock__wrapper {
+      padding: 10px;
+    }
+    .service__type {
+      padding-top: 0;
+    }
+    .mobile__header {
+      display: block;
+    }
+    .service__type-content h2 {
+      display: none;
+    }
+    h2 {
+      padding-bottom: 30px;
+    }
+    .gatsby-image-wrapper {
+      height: 400px;
+    }
+    .service__image {
+      padding-bottom: 30px;
+    }
+    .service__wrapper {
+      width: 100%;
+    }
+    .service__inner {
+      display: flex;
+    }
+    .service__title {
+      width: 70%;
+    }
+    .service__type {
+      padding-bottom: 110px;
+    }
+    .service__type-para {
+      padding-bottom: 30px;
+    }
+  }
 `;
 
 function SingleService({ service }) {
@@ -98,6 +150,7 @@ export default function ServiceBlock({
             className="service__type"
           >
             <div className="service__type-inner site__grid">
+              <h2 className="mobile__header">{content.firstSubheading}</h2>
               <div className="service__image">
                 <GatsbyImage
                   image={content.firstImage.asset.gatsbyImageData}
@@ -120,6 +173,7 @@ export default function ServiceBlock({
             className="service__type"
           >
             <div className="service__type-inner site__grid">
+              <h2 className="mobile__header">{content.firstSubheading}</h2>
               <div className="service__image">
                 <GatsbyImage
                   image={content.secondImage.asset.gatsbyImageData}
@@ -142,6 +196,7 @@ export default function ServiceBlock({
             className="service__type"
           >
             <div className="service__type-inner site__grid">
+              <h2 className="mobile__header">{content.firstSubheading}</h2>
               <div className="service__image">
                 <GatsbyImage
                   image={content.thirdImage.asset.gatsbyImageData}

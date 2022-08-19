@@ -40,6 +40,23 @@ const TextImageStyles = styled.div`
   p:first-of-type {
     text-indent: 0;
   }
+
+  @media only screen and (max-width: 1100px) {
+    padding: 60px 10px 30px 10px;
+    .site__grid {
+      display: block;
+    }
+    h2,
+    h3 {
+      padding-bottom: 30px;
+    }
+    .textimage__content {
+      padding-bottom: 30px;
+    }
+    .gatsby-image-wrapper {
+      height: 435px;
+    }
+  }
 `;
 
 function ColumnLayout({ block, raw }) {

@@ -3,7 +3,8 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 
 const FooterStyles = styled.div`
-  padding: 30px 30px;
+  padding: 100px 10px 30px 10px;
+
   .footer__inner {
     border-top: 0.5px solid black;
     padding-top: 50px;

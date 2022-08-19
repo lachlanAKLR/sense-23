@@ -74,6 +74,9 @@ const NavStyles = styled.div`
     .header__page-title {
       width: 50%;
     }
+    .header__menu {
+      width: 100px;
+    }
   }
 `;
 

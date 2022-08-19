@@ -41,6 +41,36 @@ const ServiceContentStyles = styled.div`
   h4 {
     max-width: 300px;
   }
+
+  @media only screen and (max-width: 1100px) {
+    padding-bottom: 60px;
+    .content__inner {
+      flex-direction: column-reverse;
+      height: auto;
+    }
+    .content__left,
+    .content__right {
+      width: 100%;
+      height: auto;
+    }
+
+    .gatsby-image-wrapper {
+      height: calc(100vh - 250px) !important;
+    }
+
+    .content__left {
+      padding: 30px 10px 30px 10px;
+    }
+    h2 {
+      padding-bottom: 20px;
+    }
+    h4 {
+      padding-bottom: 30px;
+    }
+    .half__grid {
+      display: block;
+    }
+  }
 `;
 
 export default function ServiceContent({ content }) {

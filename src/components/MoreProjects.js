@@ -18,6 +18,28 @@ const MoreProjectStyles = styled.div`
   .mp__project {
     width: 25%;
   }
+
+  @media only screen and (max-width: 1100px) {
+    padding: 80px 0 80px 10px;
+
+    .mp__inner::-webkit-scrollbar {
+      display: none;
+    }
+    .mp__inner {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 10px;
+    }
+
+    .mp__project {
+      flex: 0 0 auto;
+      width: 65%;
+    }
+
+    .mp__project .gatsby-image-wrapper {
+      height: auto !important;
+    }
+  }
 `;
 
 function SingleProject({ project }) {

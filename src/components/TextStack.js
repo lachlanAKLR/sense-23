@@ -18,6 +18,18 @@ const TextStackStyles = styled.div`
     grid-column-start: 5;
     grid-column-end: 11;
   }
+  @media only screen and (max-width: 1100px) {
+    padding: 60px 10px 60px 10px;
+    .site__grid {
+      display: block;
+    }
+    .stack__item {
+      padding: 20px 0;
+    }
+    .stack__title h2 {
+      padding-bottom: 20px;
+    }
+  }
 `;
 
 function TextStackItem({ stack }) {

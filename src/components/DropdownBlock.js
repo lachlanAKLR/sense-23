@@ -19,6 +19,10 @@ const DropdownBlockStyles = styled.div`
     border-top: 0.5px solid black;
   }
 
+  .drop__item:last-child {
+    border-bottom: 0.5px solid black;
+  }
+
   .drop__title {
     display: flex;
     justify-content: space-between;
@@ -42,6 +46,28 @@ const DropdownBlockStyles = styled.div`
   .remove-pad {
     padding-bottom: 0px;
   }
+
+  .drop__title button {
+    font-family: EverettRegular;
+    text-transform: none;
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    padding: 60px 10px 60px 10px;
+    .site__grid {
+      display: block;
+    }
+    .drop__columnleft {
+      padding-bottom: 30px;
+    }
+    .gatsby-image-wrapper {
+      height: 435px;
+    }
+    .drop__title button {
+      font-size: 16px;
+    }
+  }
 `;
 
 function DropdownItem({ dropdown }) {
@@ -52,7 +78,11 @@ function DropdownItem({ dropdown }) {
   return (
     <div className="drop__item">
       <div className={isActive ? 'drop__title' : 'drop__title remove-pad'}>
-        <p>{dropdown.heading}</p>
+        <p>
+          <button type="button" onClick={handleClick}>
+            {dropdown.heading}
+          </button>
+        </p>
         <h4>
           <button type="button" onClick={handleClick}>
             {isActive ? '-' : '+'}

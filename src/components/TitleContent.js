@@ -27,6 +27,15 @@ const TitleContentStyles = styled.div`
     padding: 20px 0px;
     list-style-position: inside;
   }
+  @media only screen and (max-width: 1100px) {
+    padding: 60px 10px 60px 10px;
+    .site__grid {
+      display: block;
+    }
+    .titlecontent__heading {
+      padding-bottom: 30px;
+    }
+  }
 `;
 
 export default function TitleContent({ block, raw }) {

@@ -52,6 +52,26 @@ const ContactStyles = styled.div`
   .contact__image {
     grid-column: span 3;
   }
+
+  @media only screen and (max-width: 1100px) {
+    padding: 140px 10px 100px 10px;
+
+    .site__grid {
+      display: block;
+    }
+    .contact__top h2 {
+      padding-bottom: 20px;
+    }
+    .contact__top {
+      padding-bottom: 20px;
+    }
+    .gatsby-image-wrapper {
+      width: 60% !important;
+    }
+    .contact__image {
+      padding-bottom: 60px;
+    }
+  }
 `;
 
 export default function ContactPage({ data }) {

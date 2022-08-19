@@ -8,6 +8,7 @@ import HomeHero from '../components/HomeHero';
 import OurProjects from '../components/OurProjects';
 import Layouts from '../components/Layouts';
 import HeroText from '../components/HeroText';
+import LandingAnimation from '../components/LandingAnimation';
 
 export default function HomePage({ data }) {
   const ourProjects = data.ourProjects.nodes;
@@ -16,6 +17,7 @@ export default function HomePage({ data }) {
   return (
     <>
       <GlobalStyles />
+      <LandingAnimation />
       <Nav />
       <HomeHero />
       <HeroText />

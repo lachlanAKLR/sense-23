@@ -4,6 +4,7 @@ import remington from '../assets/fonts/LTCRemington.woff';
 import everettMedium from '../assets/fonts/TWKEverett-Medium-web.woff';
 import everettRegular from '../assets/fonts/TWKEverett-Regular-web.woff';
 import everettItalic from '../assets/fonts/TWKEverett-RegularItalic-web.woff';
+import druk from '../assets/fonts/DrukWide-Bold.woff';
 
 const GlobalStyles = createGlobalStyle`
 
@@ -25,6 +26,11 @@ const GlobalStyles = createGlobalStyle`
   @font-face {
   font-family: EverettItalic; 
   src: url(${everettItalic});  
+  } 
+
+  @font-face {
+  font-family: Druk; 
+  src: url(${druk});  
   } 
 
   .site__grid {
@@ -54,6 +60,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h2 {
+    font-family: EverettMedium;
     font-size: 36px;
     line-height: 43px;
     text-transform: uppercase;
@@ -151,6 +158,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     line-height: 22px;
   }
+
 
 }
 
