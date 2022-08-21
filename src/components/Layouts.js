@@ -6,7 +6,6 @@ import TextStack from './TextStack';
 import HomeBlock from './HomeBlock';
 
 export default function Layouts({ layouts, _rawLayouts }) {
-  // console.log(_rawLayouts);
   const Components = {
     titleContent: TitleContent,
     textImage: TextImage,

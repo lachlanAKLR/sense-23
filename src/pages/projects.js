@@ -6,8 +6,9 @@ import Nav from '../components/Nav';
 import ProjectsGrid from '../components/ProjectsGrid';
 import ProjectsIndex from '../components/ProjectsIndex';
 import ProjectsInfo from '../components/ProjectsInfo';
+import LandingAnimation from '../components/LandingAnimation';
 
-export default function ProjectsPage({ data }) {
+export default function ProjectsPage({ data, transitionStatus }) {
   const commercialProjects = data.commercialProjects.nodes;
   const civilProjects = data.civilProjects.nodes;
   const resProjects = data.resProjects.nodes;
@@ -15,6 +16,7 @@ export default function ProjectsPage({ data }) {
   return (
     <>
       <GlobalStyles />
+      <LandingAnimation transitionStatus={transitionStatus} />
       <Nav title={title} />
       <ProjectsInfo />
       <ProjectsGrid

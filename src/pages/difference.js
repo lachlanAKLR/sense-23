@@ -5,14 +5,16 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import DiffLanding from '../components/DiffLanding';
 import Layouts from '../components/Layouts';
+import LandingAnimation from '../components/LandingAnimation';
 
-export default function DifferencePage({ data }) {
+export default function DifferencePage({ data, transitionStatus }) {
   const { content } = data;
   const { layouts, _rawLayouts } = content;
   const title = content.pageTitle;
   return (
     <>
       <GlobalStyles />
+      <LandingAnimation transitionStatus={transitionStatus} />
       <Nav title={title} />
       <DiffLanding content={content} />
       <Layouts layouts={layouts} _rawLayouts={_rawLayouts} />

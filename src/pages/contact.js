@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import GlobalStyles from '../styles/GlobalStyles';
 import Nav from '../components/Nav';
 import ContactForm from '../components/ContactForm';
+import LandingAnimation from '../components/LandingAnimation';
 
 const ContactStyles = styled.div`
   padding: 140px 30px 100px 30px;
@@ -74,11 +75,12 @@ const ContactStyles = styled.div`
   }
 `;
 
-export default function ContactPage({ data }) {
+export default function ContactPage({ data, transitionStatus }) {
   const { title } = data.contact;
   return (
     <>
       <GlobalStyles />
+      <LandingAnimation transitionStatus={transitionStatus} />
       <Nav title={title} />
       <ContactStyles>
         <div

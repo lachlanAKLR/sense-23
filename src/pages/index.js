@@ -10,14 +10,13 @@ import Layouts from '../components/Layouts';
 import HeroText from '../components/HeroText';
 import LandingAnimation from '../components/LandingAnimation';
 
-export default function HomePage({ data }) {
+export default function HomePage({ transitionStatus, data }) {
   const ourProjects = data.ourProjects.nodes;
   const { layouts, _rawLayouts } = data.sanityHome;
-
   return (
     <>
       <GlobalStyles />
-      <LandingAnimation />
+      <LandingAnimation transitionStatus={transitionStatus} />
       <Nav />
       <HomeHero />
       <HeroText />

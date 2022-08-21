@@ -5,8 +5,9 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import ServiceBlock from '../components/ServiceBlock';
 import ServiceContent from '../components/ServiceContent';
+import LandingAnimation from '../components/LandingAnimation';
 
-export default function ServicesPage({ data }) {
+export default function ServicesPage({ data, transitionStatus }) {
   const doorServices = data.doorServices.nodes;
   const floorServices = data.floorServices.nodes;
   const groutingServices = data.groutingServices.nodes;
@@ -16,6 +17,7 @@ export default function ServicesPage({ data }) {
   return (
     <>
       <GlobalStyles />
+      <LandingAnimation transitionStatus={transitionStatus} />
       <Nav title={title} />
       <ServiceContent content={content} />
       <ServiceBlock
