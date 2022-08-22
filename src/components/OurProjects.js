@@ -101,7 +101,12 @@ export default function OurProjects({ ourProjects }) {
   `);
   return (
     <OurProjectStyles>
-      <div className="op__top site__grid">
+      <div
+        className="op__top site__grid"
+        data-sal="fade"
+        data-sal-easing="ease"
+        data-sal-duration="1000"
+      >
         <div className="op__title">
           <h4>Our Projects</h4>
           <h2>{data.sanityHome.projectsTitle}</h2>
@@ -117,7 +122,12 @@ export default function OurProjects({ ourProjects }) {
         </div>
       </div>
 
-      <div className="op__wrapper">
+      <div
+        className="op__wrapper"
+        data-sal="fade"
+        data-sal-easing="ease"
+        data-sal-duration="1000"
+      >
         <div className="op__inner">
           {ourProjects.slice(0, 4).map((project) => (
             <SingleProject key={project.id} project={project} />

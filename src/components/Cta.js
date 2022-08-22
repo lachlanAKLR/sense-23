@@ -59,7 +59,12 @@ export default function Cta() {
 
   return (
     <CtaStyles>
-      <div className="cta__wrapper">
+      <div
+        className="cta__wrapper"
+        data-sal="fade"
+        data-sal-easing="ease"
+        data-sal-duration="1000"
+      >
         <div className="cta__inner site__grid">
           <div className="cta__col-left">
             <h1>{data.sanityCta.cta}</h1>

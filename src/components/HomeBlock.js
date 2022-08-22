@@ -84,7 +84,7 @@ function BlockContent({ block, raw }) {
   if (layoutPosition) {
     return (
       <div
-        data-sal="slide-up"
+        data-sal="fade"
         data-sal-easing="ease"
         data-sal-duration="1000"
         className="block__inner block__swap"
@@ -108,7 +108,7 @@ function BlockContent({ block, raw }) {
               </Link>
               <h1
                 data-sal="slide-right"
-                data-sal-delay="1000"
+                data-sal-delay="250"
                 data-sal-easing="ease"
                 data-sal-duration="1000"
               >
@@ -142,7 +142,7 @@ function BlockContent({ block, raw }) {
   }
   return (
     <div
-      data-sal="slide-up"
+      data-sal="fade"
       data-sal-easing="ease"
       data-sal-duration="1000"
       className="block__inner"
@@ -165,8 +165,8 @@ function BlockContent({ block, raw }) {
               <h4>{block.subheading}</h4>
             </Link>
             <h1
-              data-sal="slide-left"
-              data-sal-delay="1000"
+              data-sal="slide-right"
+              data-sal-delay="250"
               data-sal-easing="ease"
               data-sal-duration="1000"
             >

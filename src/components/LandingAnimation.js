@@ -66,6 +66,21 @@ const LandingAnimationStyles = styled.div`
       visibility: visible;
     }
   }
+
+  @media only screen and (max-width: 1100px) {
+    .landing__column {
+      width: 50%;
+    }
+    .landing__row {
+      width: 200%;
+    }
+    h1 {
+      font-family: Druk;
+      font-size: 7vw;
+      line-height: 7vw;
+      padding: 1%;
+    }
+  }
 `;
 
 function Row({ content }) {
@@ -108,6 +123,17 @@ function RowBlock() {
 }
 
 export default function LandingAnimation({ transitionStatus }) {
+  useEffect(() => {
+    gsap.to('.landing__wrapper', {
+      autoAlpha: 1,
+      duration: 0,
+    });
+    gsap.to('.landing__wrapper', {
+      autoAlpha: 0,
+      duration: 0.25,
+      delay: 1.5,
+    });
+  }, []);
   useEffect(() => {
     if (transitionStatus === 'entering') {
       gsap.to('.landing__wrapper', {

@@ -95,7 +95,12 @@ export default function Footer() {
 
   return (
     <FooterStyles>
-      <footer className="footer__wrapper">
+      <footer
+        className="footer__wrapper"
+        data-sal="fade"
+        data-sal-easing="ease"
+        data-sal-duration="1000"
+      >
         <div className="footer__inner">
           <div className="footer__top site__grid">
             <h4 className="footer__name">

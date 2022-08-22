@@ -110,19 +110,8 @@ export default function HomeHero() {
             alt="Landing Image"
           />
           <div className="home__logo">
-            <Logo
-              data-sal="fade"
-              data-sal-delay="500"
-              data-sal-easing="ease"
-              data-sal-duration="1500"
-            />
-            <div
-              data-sal="fade"
-              data-sal-delay="1000"
-              data-sal-easing="ease"
-              data-sal-duration="2000"
-              className="home__middle site__grid"
-            >
+            <Logo />
+            <div className="home__middle site__grid">
               <div className="home__info">
                 <h4>Sense Construction</h4>
                 <h4>ABN: {data.sanitySiteSettings.abn}</h4>
@@ -143,13 +132,7 @@ export default function HomeHero() {
               </div>
             </div>
           </div>
-          <div
-            data-sal="fade"
-            data-sal-delay="1000"
-            data-sal-easing="ease"
-            data-sal-duration="2000"
-            className="home__bottom site__grid"
-          >
+          <div className="home__bottom site__grid">
             <div className="home__construction">
               <h4>Contruction</h4>
             </div>

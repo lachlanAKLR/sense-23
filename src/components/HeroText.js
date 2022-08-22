@@ -24,11 +24,7 @@ export default function HeroText() {
     <HeroTextStyles>
       <div className="home__herotext-wrapper">
         <div className="home_herotext">
-          <h1
-            data-sal="slide-up"
-            data-sal-easing="ease"
-            data-sal-duration="1000"
-          >
+          <h1 data-sal="fade" data-sal-easing="ease" data-sal-duration="1000">
             {data.sanityHome.herotext}
           </h1>
         </div>

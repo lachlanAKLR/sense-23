@@ -52,7 +52,12 @@ function TextStackItem({ stack }) {
 export default function TextStack({ block, raw }) {
   return (
     <TextStackStyles>
-      <div className="stack__wrapper">
+      <div
+        className="stack__wrapper"
+        data-sal="fade"
+        data-sal-easing="ease"
+        data-sal-duration="1000"
+      >
         {raw.stackContent.map((stack) => (
           <TextStackItem key={stack._key} stack={stack} />
         ))}

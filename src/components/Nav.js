@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import TransitionLink from 'gatsby-plugin-transition-link';
+import Footer from './Footer';
 
 const NavStyles = styled.div`
   .header__nav {
     position: fixed;
     width: 100%;
-    z-index: 8000;
+    z-index: 100;
     padding: 30px;
   }
   .header__menu {
@@ -29,7 +30,7 @@ const NavStyles = styled.div`
   }
   .overlay__wrapper {
     position: fixed;
-    padding: 100px 30px;
+    padding: 100px 30px 30px 30px;
     top: -100%;
     left: 0;
     height: 100%;
@@ -37,7 +38,13 @@ const NavStyles = styled.div`
     background: var(--grey);
     transition-timing-function: ease;
     transition: all 0.5s ease-in-out 0.5s;
-    z-index: 7999;
+    z-index: 99;
+  }
+  .overlay__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .overlay__active {
     top: 0;
@@ -48,13 +55,42 @@ const NavStyles = styled.div`
     opacity: 0;
   }
 
-  .overlay__menu {
+  .overlay__menu li {
     opacity: 0;
     transition: all 0.5s ease-in-out 0s;
   }
-  .items__visible {
+
+  .items__visible li:nth-child(1) {
     opacity: 1;
     transition: all 0.5s ease-in-out 0.5s;
+  }
+
+  .items__visible li:nth-child(2) {
+    opacity: 1;
+    transition: all 0.5s ease-in-out 0.6s;
+  }
+
+  .items__visible li:nth-child(3) {
+    opacity: 1;
+    transition: all 0.5s ease-in-out 0.7s;
+  }
+
+  .items__visible li:nth-child(4) {
+    opacity: 1;
+    transition: all 0.5s ease-in-out 0.8s;
+  }
+
+  .items__visible li:nth-child(5) {
+    opacity: 1;
+    transition: all 0.5s ease-in-out 0.9s;
+  }
+
+  .Footer__FooterStyles-eZsFsR {
+    padding-bottom: 0;
+  }
+
+  .footer__back {
+    display: none;
   }
 
   /* Mobile Styles */
@@ -62,6 +98,12 @@ const NavStyles = styled.div`
   @media only screen and (max-width: 1100px) {
     .header__nav {
       padding: 10px;
+    }
+    .header__button {
+      padding-top: 2px;
+    }
+    .header__page-title {
+      padding-top: 2px;
     }
     .overlay__wrapper {
       padding: 50px 10px;
@@ -77,6 +119,9 @@ const NavStyles = styled.div`
     }
     .header__menu {
       width: 100px;
+    }
+    .Footer__FooterStyles-eZsFsR {
+      display: none;
     }
   }
 `;
@@ -191,6 +236,7 @@ export default function Nav({ title }) {
               </li>
             </ul>
           </div>
+          <Footer />
         </div>
       </div>
     </NavStyles>

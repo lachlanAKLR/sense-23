@@ -41,7 +41,12 @@ const TitleContentStyles = styled.div`
 export default function TitleContent({ block, raw }) {
   return (
     <TitleContentStyles>
-      <div className="titlecontent__wrapper">
+      <div
+        className="titlecontent__wrapper"
+        data-sal="fade"
+        data-sal-easing="ease"
+        data-sal-duration="1000"
+      >
         <div className="titlecontent__inner site__grid">
           <div className="titlecontent__columnleft">
             <div className="titlecontent__heading">

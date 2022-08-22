@@ -43,9 +43,9 @@ const ProjectStyles = styled.div`
     .diff__title {
       width: 100%;
       padding: 10px;
-      position: absolute;
+      position: relative;
       bottom: 0%;
-      height: 250px;
+      height: 400px;
     }
     .gatsby-image-wrapper {
       height: calc(100vh - 250px) !important;

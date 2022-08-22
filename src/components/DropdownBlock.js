@@ -99,7 +99,12 @@ function DropdownItem({ dropdown }) {
 export default function DropdownBlock({ block, raw }) {
   return (
     <DropdownBlockStyles>
-      <div className="drop__wrapper">
+      <div
+        className="drop__wrapper"
+        data-sal="fade"
+        data-sal-easing="ease"
+        data-sal-duration="1000"
+      >
         <div className="drop__inner site__grid">
           <div className="drop__columnleft">
             <div className="drop__image">

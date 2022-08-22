@@ -114,7 +114,7 @@ const ProjectStyles = styled.div`
     }
     .project__title {
       padding: 10px;
-      position: absolute;
+      position: relative;
       bottom: 0%;
       height: 250px;
     }
@@ -129,7 +129,7 @@ const ProjectStyles = styled.div`
     }
 
     .project__desc {
-      padding: 300px 10px 40px 10px;
+      padding: 50px 10px 40px 10px;
     }
     .project__desc-left {
       padding-bottom: 80px;
@@ -194,7 +194,12 @@ export default function ProjectPage({ data }) {
                 </div>
               </div>
             </div>
-            <div className="project__desc">
+            <div
+              className="project__desc"
+              data-sal="fade"
+              data-sal-easing="ease"
+              data-sal-duration="1000"
+            >
               <div className="project__desc-inner site__grid">
                 <div className="project__desc-left">
                   <ul>

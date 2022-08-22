@@ -100,7 +100,12 @@ function ColumnLayout({ block, raw }) {
 export default function TextImage({ block, raw }) {
   return (
     <TextImageStyles>
-      <div className="textimage__wrapper">
+      <div
+        className="textimage__wrapper"
+        data-sal="fade"
+        data-sal-easing="ease"
+        data-sal-duration="1000"
+      >
         <div className="textimage__inner site__grid">
           <ColumnLayout block={block} raw={raw} />
         </div>

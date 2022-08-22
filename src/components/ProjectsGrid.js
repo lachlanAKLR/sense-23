@@ -66,6 +66,10 @@ const ProjectsGridStyles = styled.div`
     left: 0;
   }
 
+  .grid__wrap-top h1 {
+    width: 90%;
+  }
+
   .grid__wrap-bottom h4 {
     width: 50%;
   }
