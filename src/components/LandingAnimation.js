@@ -124,17 +124,6 @@ function RowBlock() {
 
 export default function LandingAnimation({ transitionStatus }) {
   useEffect(() => {
-    gsap.to('.landing__wrapper', {
-      autoAlpha: 1,
-      duration: 0,
-    });
-    gsap.to('.landing__wrapper', {
-      autoAlpha: 0,
-      duration: 0.25,
-      delay: 1.5,
-    });
-  }, []);
-  useEffect(() => {
     if (transitionStatus === 'entering') {
       gsap.to('.landing__wrapper', {
         autoAlpha: 1,

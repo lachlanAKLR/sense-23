@@ -45,7 +45,7 @@ const ProjectStyles = styled.div`
       padding: 10px;
       position: relative;
       bottom: 0%;
-      height: 400px;
+      height: 250px;
     }
     .gatsby-image-wrapper {
       height: calc(100vh - 250px) !important;

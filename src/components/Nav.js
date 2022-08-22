@@ -120,7 +120,7 @@ const NavStyles = styled.div`
     .header__menu {
       width: 100px;
     }
-    .Footer__FooterStyles-eZsFsR {
+    .footer__wrapper {
       display: none;
     }
   }
