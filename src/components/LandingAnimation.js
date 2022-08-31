@@ -123,31 +123,24 @@ function RowBlock() {
 }
 
 export default function LandingAnimation({ transitionStatus }) {
+  console.log(transitionStatus);
   useEffect(() => {
-    gsap.set('.landing__wrapper', {
-      autoAlpha: 1,
-      duration: 6,
-    });
-    gsap.to('.landing__block', {
-      autoAlpha: 1,
-      delay: 3,
-    });
     gsap.to('.sense__logo', {
       autoAlpha: 1,
       duration: 2,
-      delay: 2,
+      delay: 1.5,
       ease: 'circ',
     });
     gsap.to('.home__middle', {
       autoAlpha: 1,
       duration: 1.5,
-      delay: 2.5,
+      delay: 2,
       ease: 'circ',
     });
     gsap.to('.home__bottom', {
       autoAlpha: 1,
       duration: 1.5,
-      delay: 3,
+      delay: 2.5,
       ease: 'circ',
     });
   }, []);

@@ -20,6 +20,7 @@ const NavStyles = styled.div`
     pointer-events: all;
     transition: all ease 0.25s;
   }
+
   .header__menu {
     grid-column: span 2;
     display: flex;
@@ -102,11 +103,24 @@ const NavStyles = styled.div`
     display: none;
   }
 
+  .menu__footer {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .footer__appear {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 0.5s ease-in-out 1s;
+  }
+
   /* Mobile Styles */
 
   @media only screen and (max-width: 1100px) {
-    .header__nav {
+    .header__wrapper {
       padding: 10px;
+      opacity: 1;
     }
     .header__button {
       padding-top: 2px;
@@ -271,7 +285,13 @@ export default function Nav({ title }) {
                 </li>
               </ul>
             </div>
-            <Footer />
+            <div
+              className={
+                isActive ? 'menu__footer footer__appear' : 'menu__footer'
+              }
+            >
+              <Footer />
+            </div>
           </div>
         </div>
       </NavStyles>
@@ -381,7 +401,13 @@ export default function Nav({ title }) {
               </li>
             </ul>
           </div>
-          <Footer />
+          <div
+            className={
+              isActive ? 'menu__footer footer__appear' : 'menu__footer'
+            }
+          >
+            <Footer />
+          </div>
         </div>
       </div>
     </NavStyles>
