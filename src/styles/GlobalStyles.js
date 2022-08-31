@@ -1,16 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 
-import remington from '../assets/fonts/LTCRemington.woff';
-import everettMedium from '../assets/fonts/TWKEverett-Medium-web.woff';
-import everettRegular from '../assets/fonts/TWKEverett-Regular-web.woff';
-import everettItalic from '../assets/fonts/TWKEverett-RegularItalic-web.woff';
-import druk from '../assets/fonts/DrukWide-Bold.woff';
+// import remington from '../assets/fonts/LTCRemington.woff';
+// import everettMedium from '../assets/fonts/TWKEverett-Medium-web.woff';
+// import everettRegular from '../assets/fonts/TWKEverett-Regular-web.woff';
+// import everettItalic from '../assets/fonts/TWKEverett-RegularItalic-web.woff';
+// import druk from '../assets/fonts/DrukWide-Bold.woff';
 
 const GlobalStyles = createGlobalStyle`
 
-  @font-face {
+  /* @font-face {
     font-family: Remington;
-    src: url(${remington});
+    src: url(${remington}); 
    }
 
   @font-face {
@@ -31,7 +31,7 @@ const GlobalStyles = createGlobalStyle`
   @font-face {
   font-family: Druk; 
   src: url(${druk});  
-  } 
+  }  */
 
   .site__grid {
     display: grid;
@@ -49,6 +49,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: EverettRegular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: normal;
     text-transform: none;
+    background: #fff;
   }
 
   h1 {

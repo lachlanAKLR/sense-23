@@ -32,6 +32,7 @@ const HomeHeroStyles = styled.div`
   }
 
   .home__middle {
+    opacity: 0;
     padding-top: 100px;
   }
 
@@ -44,6 +45,7 @@ const HomeHeroStyles = styled.div`
   }
 
   .home__bottom {
+    opacity: 0;
     width: 100%;
     position: relative;
     bottom: 80px;
@@ -52,6 +54,10 @@ const HomeHeroStyles = styled.div`
 
   .home__herotext-wrapper {
     padding: 60px 30px 150px 30px;
+  }
+
+  .sense__logo {
+    opacity: 0;
   }
 
   /* Mobile Styles */
@@ -110,7 +116,7 @@ export default function HomeHero() {
             alt="Landing Image"
           />
           <div className="home__logo">
-            <Logo />
+            <Logo className="sense__logo" />
             <div className="home__middle site__grid">
               <div className="home__info">
                 <h4>Sense Construction</h4>

@@ -10,7 +10,7 @@ const LandingAnimationStyles = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9000;
+    z-index: 10000;
     opacity: 0;
     overflow: hidden;
     left: 0;
@@ -123,6 +123,34 @@ function RowBlock() {
 }
 
 export default function LandingAnimation({ transitionStatus }) {
+  useEffect(() => {
+    gsap.set('.landing__wrapper', {
+      autoAlpha: 1,
+      duration: 6,
+    });
+    gsap.to('.landing__block', {
+      autoAlpha: 1,
+      delay: 3,
+    });
+    gsap.to('.sense__logo', {
+      autoAlpha: 1,
+      duration: 2,
+      delay: 2,
+      ease: 'circ',
+    });
+    gsap.to('.home__middle', {
+      autoAlpha: 1,
+      duration: 1.5,
+      delay: 2.5,
+      ease: 'circ',
+    });
+    gsap.to('.home__bottom', {
+      autoAlpha: 1,
+      duration: 1.5,
+      delay: 3,
+      ease: 'circ',
+    });
+  }, []);
   useEffect(() => {
     if (transitionStatus === 'entering') {
       gsap.to('.landing__wrapper', {

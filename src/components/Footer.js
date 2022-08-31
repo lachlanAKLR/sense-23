@@ -89,9 +89,18 @@ export default function Footer() {
         acn
         linkedin
         instagram
+        ack
+        footerLinks {
+          link
+          linkText
+          _key
+          _type
+        }
       }
     }
   `);
+
+  const links = data.sanitySiteSettings.footerLinks;
 
   return (
     <FooterStyles>
@@ -137,31 +146,22 @@ export default function Footer() {
             </h4>
           </div>
           <div className="footer__bottom site__grid">
-            <h4 className="footer__acc">
-              WE ACKNOWLEDGE THE DARKINYUNG PEOPLE OF THE DARKINJUNG LAND AS THE
-              TRADITIONAL CUSTODIANS OF THE COUNTRY we OPERATE ON. WE PAY OUR
-              RESPECTS TO ELDERS PAST, PRESENT AND emerging, and EXTEND THAT
-              RESPECT TO ALL FIRST NATIONS PEOPLE.
-            </h4>
+            <h4 className="footer__acc">{data.sanitySiteSettings.ack}</h4>
             <div className="footer__links">
               <ul>
-                <li>
-                  <Link to="/">FAQ's</Link>
-                </li>
-                <li>
-                  <Link to="/">Contact</Link>
-                </li>
-                <li>
-                  <Link to="/">Link</Link>
-                </li>
-                <li>
-                  <Link to="/">Link</Link>
-                </li>
+                {links.map((link) => (
+                  <li key={link._key}>
+                    <Link to={link.link}>{link.linkText}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
             <h4 className="footer__credit">
               Design & Build <br />
-              by AKLR
+              by{' '}
+              <a href="https://www.aklr.xyz/" target="blank">
+                AKLR
+              </a>
             </h4>
           </div>
         </div>

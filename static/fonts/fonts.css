@@ -1,0 +1,24 @@
+@font-face {
+    font-family: Remington;
+    src: url(/fonts/LTCRemington.woff);
+}
+
+@font-face {
+    font-family: EverettMedium;
+    src: url(/fonts/TWKEverett-Medium-web.woff);
+}
+
+@font-face {
+    font-family: EverettRegular;
+    src: url(/fonts/TWKEverett-Regular-web.woff);
+}
+
+@font-face {
+    font-family: EverettItalic;
+    src: url(/fonts/TWKEverett-RegularItalic-web.woff);
+}
+
+@font-face {
+    font-family: Druk;
+    src: url(/fonts/DrukWide-Bold.woff);
+}

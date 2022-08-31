@@ -5,11 +5,20 @@ import TransitionLink from 'gatsby-plugin-transition-link';
 import Footer from './Footer';
 
 const NavStyles = styled.div`
-  .header__nav {
+  .header__wrapper {
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 9999;
     padding: 30px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all ease 0.5s;
+  }
+
+  .nav__appear {
+    opacity: 1;
+    pointer-events: all;
+    transition: all ease 0.25s;
   }
   .header__menu {
     grid-column: span 2;
@@ -132,9 +141,145 @@ export default function Nav({ title }) {
     setIsActive((current) => !current);
   };
 
+  const [navAppear, setNavAppear] = useState(false);
+  const isBrowser = typeof window !== 'undefined';
+  const isHomePage = typeof title === 'undefined';
+  const displayNav = () => {
+    if (isBrowser && window.scrollY > window.innerHeight) {
+      setNavAppear(true);
+    } else {
+      setNavAppear(false);
+    }
+  };
+
+  if (isBrowser) {
+    window.addEventListener('scroll', displayNav);
+  }
+
+  if (isHomePage) {
+    return (
+      <NavStyles>
+        <div
+          className={
+            navAppear ? 'header__wrapper nav__appear' : 'header__wrapper'
+          }
+        >
+          <div className="header__nav site__grid">
+            <button
+              className="header__menu"
+              type="button"
+              onClick={handleClick}
+            >
+              <div className="header__hamburger">
+                <span className={isActive ? 'bar hidden' : 'bar'} />
+                <span className="bar" />
+                <span className={isActive ? 'bar hidden' : 'bar'} />
+              </div>
+              <div className="header__button">
+                {isActive ? 'close' : 'menu'}
+              </div>
+            </button>
+            <h4 className="header__page-title">{title}</h4>
+          </div>
+        </div>
+        <div
+          className={
+            isActive ? 'overlay__wrapper overlay__active' : 'overlay__wrapper'
+          }
+        >
+          <div className="overlay__inner">
+            <div
+              className={
+                isActive ? 'overlay__menu items__visible' : 'overlay__menu'
+              }
+            >
+              <ul>
+                <li>
+                  <h1>
+                    <TransitionLink
+                      to="/"
+                      exit={{
+                        length: 1,
+                      }}
+                      entry={{
+                        length: 1.75,
+                      }}
+                    >
+                      Home
+                    </TransitionLink>
+                  </h1>
+                </li>
+                <li>
+                  <h1>
+                    <TransitionLink
+                      to="/services"
+                      exit={{
+                        length: 1,
+                      }}
+                      entry={{
+                        length: 1.75,
+                      }}
+                    >
+                      Services
+                    </TransitionLink>
+                  </h1>
+                </li>
+                <li>
+                  <h1>
+                    <TransitionLink
+                      to="/difference"
+                      exit={{
+                        length: 1,
+                      }}
+                      entry={{
+                        length: 1.75,
+                      }}
+                    >
+                      Our Difference
+                    </TransitionLink>
+                  </h1>
+                </li>
+                <li>
+                  <h1>
+                    <TransitionLink
+                      to="/projects"
+                      exit={{
+                        length: 1,
+                      }}
+                      entry={{
+                        length: 1.75,
+                      }}
+                    >
+                      Our Projects
+                    </TransitionLink>
+                  </h1>
+                </li>
+                <li>
+                  <h1>
+                    <TransitionLink
+                      to="/contact"
+                      exit={{
+                        length: 1,
+                      }}
+                      entry={{
+                        length: 1.75,
+                      }}
+                    >
+                      Contact Us
+                    </TransitionLink>
+                  </h1>
+                </li>
+              </ul>
+            </div>
+            <Footer />
+          </div>
+        </div>
+      </NavStyles>
+    );
+  }
   return (
     <NavStyles>
-      <div className="header__wrapper">
+      <div className="header__wrapper nav__appear">
         <div className="header__nav site__grid">
           <button className="header__menu" type="button" onClick={handleClick}>
             <div className="header__hamburger">

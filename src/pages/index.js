@@ -34,6 +34,15 @@ export const query = graphql`
       nodes {
         id
         title
+        work
+        location
+        description
+        _rawContent
+        credit
+        completion
+        builder
+        budget
+        extent
         image {
           asset {
             gatsbyImageData
