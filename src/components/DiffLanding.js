@@ -4,6 +4,9 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import GlobalStyles from '../styles/GlobalStyles';
 
 const ProjectStyles = styled.div`
+  h1 {
+    max-width: 500px;
+  }
   .diff__landing {
     display: flex;
     height: 100vh;
@@ -34,6 +37,10 @@ const ProjectStyles = styled.div`
   .diff__image {
     width: calc(50% - 15px);
     height: 100%;
+  }
+
+  .diff__subtitle {
+    width: 50%;
   }
 
   @media only screen and (max-width: 1100px) {
@@ -98,7 +105,10 @@ export default function DiffLanding({ content }) {
                     data-sal-duration="1000"
                     className="diff__title-bottom"
                   >
-                    <h4>Construction, done consciously</h4>
+                    <h4 className="diff__subtitle">
+                      Construction, <br />
+                      done consciously
+                    </h4>
                     <ul>
                       {content.details.map((detail) => (
                         <li key={detail}>

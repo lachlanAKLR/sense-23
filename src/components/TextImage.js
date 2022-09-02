@@ -29,12 +29,12 @@ const TextImageStyles = styled.div`
   h3,
   h2 {
     padding-bottom: 60px;
-    max-width: 500px;
+    max-width: 575px;
   }
 
   p {
     text-indent: 60px;
-    max-width: 500px;
+    max-width: 575px;
   }
 
   p:first-of-type {

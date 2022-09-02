@@ -4,6 +4,7 @@ import TextImage from './TextImage';
 import DropdownBlock from './DropdownBlock';
 import TextStack from './TextStack';
 import HomeBlock from './HomeBlock';
+import TitleContentImage from './TitleContentImage';
 
 export default function Layouts({ layouts, _rawLayouts }) {
   const Components = {
@@ -12,6 +13,7 @@ export default function Layouts({ layouts, _rawLayouts }) {
     dropdownBlock: DropdownBlock,
     textStack: TextStack,
     homeBlock: HomeBlock,
+    titleContentImage: TitleContentImage,
   };
 
   return layouts.map((block, index) => {

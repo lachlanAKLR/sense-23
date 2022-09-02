@@ -3,16 +3,21 @@ import { graphql } from 'gatsby';
 import GlobalStyles from '../styles/GlobalStyles';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
-import ServiceBlock from '../components/ServiceBlock';
 import ServiceContent from '../components/ServiceContent';
 import LandingAnimation from '../components/LandingAnimation';
+import ServiceType from '../components/ServiceType';
+import ColourCta from '../components/ColourCta';
 
 export default function ServicesPage({ data, transitionStatus }) {
-  const doorServices = data.doorServices.nodes;
-  const floorServices = data.floorServices.nodes;
-  const groutingServices = data.groutingServices.nodes;
   const { content } = data;
   const title = content.pageTitle;
+  const { firstServices } = content;
+  const { secondServices } = content;
+  const { thirdServices } = content;
+  const { _rawFirstServices } = content;
+  const { _rawSecondServices } = content;
+  const { _rawThirdServices } = content;
+  const { cta } = data;
 
   return (
     <>
@@ -20,12 +25,28 @@ export default function ServicesPage({ data, transitionStatus }) {
       <LandingAnimation transitionStatus={transitionStatus} />
       <Nav title={title} />
       <ServiceContent content={content} />
-      <ServiceBlock
-        doorServices={doorServices}
-        floorServices={floorServices}
-        groutingServices={groutingServices}
-        content={content}
+      <ServiceType
+        heading={content.firstSubheading}
+        content={content.firstText}
+        image={content.firstImage.asset.gatsbyImageData}
+        layouts={firstServices}
+        _rawLayouts={_rawFirstServices}
       />
+      <ServiceType
+        heading={content.secondSubheading}
+        content={content.secondText}
+        image={content.secondImage.asset.gatsbyImageData}
+        layouts={secondServices}
+        _rawLayouts={_rawSecondServices}
+      />
+      <ServiceType
+        heading={content.thirdSubheading}
+        content={content.thirdText}
+        image={content.thirdImage.asset.gatsbyImageData}
+        layouts={thirdServices}
+        _rawLayouts={_rawThirdServices}
+      />
+      <ColourCta cta={cta} />
       <Footer />
     </>
   );
@@ -33,36 +54,6 @@ export default function ServicesPage({ data, transitionStatus }) {
 
 export const query = graphql`
   query {
-    doorServices: allSanityService(
-      filter: { sector: { in: ["door-packages"] } }
-    ) {
-      nodes {
-        title
-        sector
-        _rawContent
-        id
-      }
-    }
-    floorServices: allSanityService(
-      filter: { sector: { in: ["floor-preparation"] } }
-    ) {
-      nodes {
-        title
-        sector
-        _rawContent
-        id
-      }
-    }
-    groutingServices: allSanityService(
-      filter: { sector: { in: ["grouting-remediation"] } }
-    ) {
-      nodes {
-        title
-        sector
-        _rawContent
-        id
-      }
-    }
     content: sanityServicesPage {
       heading
       pageTitle
@@ -94,6 +85,46 @@ export const query = graphql`
           gatsbyImageData
         }
       }
+      _rawSecondServices
+      _rawFirstServices
+      _rawThirdServices
+      firstServices {
+        _key
+        _type
+        heading
+        image {
+          asset {
+            gatsbyImageData
+          }
+        }
+      }
+      secondServices {
+        _key
+        _type
+        heading
+        image {
+          asset {
+            gatsbyImageData
+          }
+        }
+      }
+      thirdServices {
+        _key
+        _type
+        heading
+        image {
+          asset {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+    cta: sanityGreyCta {
+      cta
+      text
+      link
+      byline
+      _type
     }
   }
 `;

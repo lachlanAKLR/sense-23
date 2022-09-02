@@ -7,12 +7,14 @@ import ProjectsGrid from '../components/ProjectsGrid';
 import ProjectsIndex from '../components/ProjectsIndex';
 import ProjectsInfo from '../components/ProjectsInfo';
 import LandingAnimation from '../components/LandingAnimation';
+import ColourCta from '../components/ColourCta';
 
 export default function ProjectsPage({ data, transitionStatus }) {
   const commercialProjects = data.commercialProjects.nodes;
   const civilProjects = data.civilProjects.nodes;
   const resProjects = data.resProjects.nodes;
   const title = data.sanityProjects.pageTitle;
+  const { cta } = data;
   return (
     <>
       <GlobalStyles />
@@ -29,6 +31,7 @@ export default function ProjectsPage({ data, transitionStatus }) {
         civilProjects={civilProjects}
         resProjects={resProjects}
       />
+      <ColourCta cta={cta} />
       <Footer />
     </>
   );
@@ -107,6 +110,13 @@ export const query = graphql`
     }
     sanityProjects {
       pageTitle
+    }
+    cta: sanityBlackCta {
+      cta
+      text
+      link
+      byline
+      _type
     }
   }
 `;

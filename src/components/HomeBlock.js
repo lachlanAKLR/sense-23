@@ -8,6 +8,9 @@ const HomeBlockStyles = styled.div`
   padding: 30px 30px 150px 30px;
   .gatsby-image-wrapper {
     max-height: 900px;
+    width: 80%;
+    height: 90%;
+    object-fit: cover;
   }
   .block__inner {
     display: flex;
@@ -39,6 +42,10 @@ const HomeBlockStyles = styled.div`
   }
   .image__wrapper {
     display: block;
+  }
+
+  .right__image {
+    text-align: center;
   }
 
   /* Mobile Styles */
@@ -89,13 +96,11 @@ function BlockContent({ block, raw }) {
         data-sal-duration="1000"
         className="block__inner block__swap"
       >
-        <div className="image__wrapper">
+        <div className="image__wrapper right__image">
           <GatsbyImage
             image={block.image.asset.gatsbyImageData}
             alt={`image of ${block.heading}`}
             style={{
-              width: '100%',
-              height: 'auto',
               objectFit: 'cover',
             }}
           />
@@ -119,8 +124,6 @@ function BlockContent({ block, raw }) {
                   image={block.image.asset.gatsbyImageData}
                   alt={`image of ${block.heading}`}
                   style={{
-                    width: '100%',
-                    height: 'auto',
                     objectFit: 'cover',
                   }}
                 />
@@ -152,8 +155,6 @@ function BlockContent({ block, raw }) {
           image={block.image.asset.gatsbyImageData}
           alt={`image of ${block.heading}`}
           style={{
-            width: '100%',
-            height: 'auto',
             objectFit: 'cover',
           }}
         />
@@ -177,8 +178,6 @@ function BlockContent({ block, raw }) {
                 image={block.image.asset.gatsbyImageData}
                 alt={`image of ${block.heading}`}
                 style={{
-                  width: '100%',
-                  height: 'auto',
                   objectFit: 'cover',
                 }}
               />

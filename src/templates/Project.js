@@ -75,12 +75,11 @@ const ProjectStyles = styled.div`
   }
   .projects__link {
     position: fixed;
-    z-index: 10;
+    z-index: 10000;
     top: 30px;
   }
   p {
     text-indent: 60px;
-    max-width: 500px;
   }
 
   p:first-of-type {
