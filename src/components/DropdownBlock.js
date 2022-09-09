@@ -80,14 +80,10 @@ function DropdownItem({ dropdown }) {
     <button type="button" className="drop__item" onClick={handleClick}>
       <div className={isActive ? 'drop__title' : 'drop__title remove-pad'}>
         <p>
-          <button type="button" onClick={handleClick}>
-            {dropdown.heading}
-          </button>
+          <button type="button">{dropdown.heading}</button>
         </p>
         <h4>
-          <button type="button" onClick={handleClick}>
-            {isActive ? '-' : '+'}
-          </button>
+          <button type="button">{isActive ? '-' : '+'}</button>
         </h4>
       </div>
       <div className={isActive ? 'drop__content' : 'drop__content hidden'}>

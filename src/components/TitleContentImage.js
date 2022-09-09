@@ -25,7 +25,7 @@ export default function TitleContentImage({ block, raw }) {
         >
           <PortableText value={raw.content} />
         </div>
-        <h4 style={{ position: 'absolute', right: 30 }}>
+        <h4 className="service__button">
           <button type="button">{isActive ? '-' : '+'}</button>
         </h4>
       </button>

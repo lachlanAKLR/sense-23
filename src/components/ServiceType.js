@@ -134,6 +134,11 @@ const ServiceTypeStyles = styled.div`
     .no_gap {
       gap: 0px;
     }
+
+    .service__button {
+      position: absolute;
+      right: 30px;
+    }
   }
 `;
 
