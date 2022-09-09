@@ -8,9 +8,13 @@ export default function TitleContentImage({ block, raw }) {
   };
   return (
     <div className="service__wrapper">
-      <button type="button" onClick={handleClick} className="service__inner">
+      <button
+        type="button"
+        className={isActive ? 'service__inner gap' : 'service__inner no_gap'}
+        onClick={handleClick}
+      >
         <div className="service__title">
-          <button type="button" onClick={handleClick}>
+          <button type="button">
             <p>{block.heading}</p>
           </button>
         </div>
@@ -21,10 +25,8 @@ export default function TitleContentImage({ block, raw }) {
         >
           <PortableText value={raw.content} />
         </div>
-        <h4>
-          <button type="button" onClick={handleClick}>
-            {isActive ? '-' : '+'}
-          </button>
+        <h4 style={{ position: 'absolute', right: 30 }}>
+          <button type="button">{isActive ? '-' : '+'}</button>
         </h4>
       </button>
     </div>

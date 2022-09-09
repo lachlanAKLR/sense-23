@@ -132,9 +132,7 @@ const ProjectsGridStyles = styled.div`
     .projects__left {
       padding-bottom: 30px;
     }
-    .grid__sector {
-      padding-top: 0px;
-    }
+
     h2 {
       padding-left: 10px;
     }
@@ -155,6 +153,13 @@ const ProjectsGridStyles = styled.div`
       padding-top: 80px;
       padding-right: 5%;
       padding-left: 20%;
+    }
+
+    .grid__sector:first-of-type {
+      padding-top: 0;
+    }
+    .grid__sector {
+      padding-top: 70px;
     }
   }
 `;

@@ -29,6 +29,7 @@ const HomeHeroStyles = styled.div`
     grid-column-start: 7;
     grid-column-end: 12;
     grid-row-start: 1;
+    max-width: 500px;
   }
 
   .home__middle {
@@ -119,7 +120,7 @@ export default function HomeHero() {
             <Logo className="sense__logo" />
             <div className="home__middle site__grid">
               <div className="home__info">
-                <h4>Sense Construction</h4>
+                <h4>Sense Constructions</h4>
                 <h4>ABN: {data.sanitySiteSettings.abn}</h4>
                 <h4>ACN: {data.sanitySiteSettings.acn}</h4>
                 <h4>

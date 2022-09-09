@@ -35,6 +35,7 @@ const ServiceTypeStyles = styled.div`
   }
   .service__inner {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(7, 1fr);
     gap: 30px;
     padding: 20px 0;
@@ -115,6 +116,7 @@ const ServiceTypeStyles = styled.div`
     }
     .service__inner {
       display: flex;
+      flex-direction: column;
     }
     .service__title {
       width: 70%;
@@ -124,6 +126,13 @@ const ServiceTypeStyles = styled.div`
     }
     .service__type-para {
       padding-bottom: 30px;
+    }
+    .gap {
+      gap: 30px;
+    }
+
+    .no_gap {
+      gap: 0px;
     }
   }
 `;

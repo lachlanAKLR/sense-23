@@ -46,6 +46,27 @@ const ColourStyles = styled.div`
     grid-column: span 5;
     max-width: 450px;
   }
+
+  @media only screen and (max-width: 1100px) {
+    padding: 80px 10px 10px 10px;
+
+    .site__grid {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .colour__subtitle,
+    h1,
+    .colour__link {
+      text-align: left;
+      padding-left: 0;
+    }
+
+    .colour__byline {
+      max-width: 280px;
+    }
+  }
 `;
 
 export default function ColourCta({ cta }) {

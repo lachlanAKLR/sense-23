@@ -234,7 +234,7 @@ export default function Nav({ title }) {
                         length: 1.75,
                       }}
                     >
-                      Services
+                      Our Services
                     </TransitionLink>
                   </h1>
                 </li>
