@@ -141,7 +141,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h2 {
-    font-size: 18px;
+    font-size: 24px;
     line-height: 26px;
   }
 
@@ -205,9 +205,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .visible {
-    height: 250px;
+    height: auto;
     transition: all ease-in-out .3s;
-    overflow-y: scroll;
   }
 
 

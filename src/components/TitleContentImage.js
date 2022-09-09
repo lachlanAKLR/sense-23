@@ -8,7 +8,7 @@ export default function TitleContentImage({ block, raw }) {
   };
   return (
     <div className="service__wrapper">
-      <div className="service__inner">
+      <button type="button" onClick={handleClick} className="service__inner">
         <div className="service__title">
           <button type="button" onClick={handleClick}>
             <p>{block.heading}</p>
@@ -26,7 +26,7 @@ export default function TitleContentImage({ block, raw }) {
             {isActive ? '-' : '+'}
           </button>
         </h4>
-      </div>
+      </button>
     </div>
   );
 }

@@ -35,6 +35,7 @@ const DropdownBlockStyles = styled.div`
 
   li {
     padding-bottom: 10px;
+    text-align: left;
   }
 
   .hidden {
@@ -47,7 +48,7 @@ const DropdownBlockStyles = styled.div`
     padding-bottom: 0px;
   }
 
-  .drop__title button {
+  button {
     font-family: EverettRegular;
     text-transform: none;
     font-size: 20px;
@@ -76,7 +77,7 @@ function DropdownItem({ dropdown }) {
     setIsActive((current) => !current);
   };
   return (
-    <div className="drop__item">
+    <button type="button" className="drop__item" onClick={handleClick}>
       <div className={isActive ? 'drop__title' : 'drop__title remove-pad'}>
         <p>
           <button type="button" onClick={handleClick}>
@@ -92,7 +93,7 @@ function DropdownItem({ dropdown }) {
       <div className={isActive ? 'drop__content' : 'drop__content hidden'}>
         <PortableText value={dropdown.content} />
       </div>
-    </div>
+    </button>
   );
 }
 

@@ -141,7 +141,7 @@ const NavStyles = styled.div`
       width: 50%;
     }
     .header__menu {
-      width: 100px;
+      width: 50%;
     }
     .footer__wrapper {
       display: none;
@@ -350,7 +350,7 @@ export default function Nav({ title }) {
                       length: 1.75,
                     }}
                   >
-                    Services
+                    Our Services
                   </TransitionLink>
                 </h1>
               </li>

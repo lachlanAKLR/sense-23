@@ -47,7 +47,6 @@ module.exports = {
         enableListener: true,
         custom: [
           {
-            /* Exact name of the font as defied in @font-face CSS rule */
             name: [
               'Remington',
               'EverettMedium',
@@ -55,7 +54,6 @@ module.exports = {
               'EverettItalic',
               'Druk',
             ],
-            /* Path to the font CSS file inside the "static" folder with @font-face definition */
             file: '/fonts/fonts.css',
           },
         ],

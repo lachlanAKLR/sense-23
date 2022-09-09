@@ -4,9 +4,11 @@ import styled from 'styled-components';
 
 const ColourStyles = styled.div`
   padding: 140px 30px 30px 30px;
+
   .grey {
     background-color: var(--grey);
   }
+
   .black {
     background-color: var(--black);
     color: var(--white);

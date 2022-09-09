@@ -91,6 +91,10 @@ const MoreProjectStyles = styled.div`
     bottom: 0px;
   }
 
+  .gatsby-image-wrapper {
+    height: 250px;
+  }
+
   @media only screen and (max-width: 1100px) {
     padding: 80px 0 80px 10px;
 
@@ -109,7 +113,7 @@ const MoreProjectStyles = styled.div`
     }
 
     .mp__project .gatsby-image-wrapper {
-      height: auto !important;
+      height: 200px;
     }
   }
 `;
@@ -130,7 +134,6 @@ function SingleProject({ project }) {
             alt={`image of ${project.title}`}
             style={{
               width: '100%',
-              height: 'auto',
               objectFit: 'cover',
             }}
           />

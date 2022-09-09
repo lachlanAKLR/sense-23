@@ -41,18 +41,35 @@ const ServiceTypeStyles = styled.div`
   }
   .service__title {
     grid-column: span 2;
+    text-align: left;
   }
   .service__content {
     grid-column: span 4;
   }
 
+  button {
+    font-family: EverettRegular;
+    text-transform: none;
+    font-size: 20px;
+    text-align: left;
+  }
+
   li:before {
     content: '+ ';
   }
-  .service__content p,
+
   ul {
     padding-bottom: 20px;
   }
+
+  .service__content p:first-child {
+    text-indent: 0px;
+  }
+
+  .service__content p {
+    text-indent: 40px;
+  }
+
   .mobile__header {
     display: none;
   }
@@ -62,6 +79,10 @@ const ServiceTypeStyles = styled.div`
 
   .service__wrapper:last-child {
     border-bottom: 0.5px solid black;
+  }
+
+  button p {
+    text-align: left;
   }
 
   @media only screen and (max-width: 1100px) {

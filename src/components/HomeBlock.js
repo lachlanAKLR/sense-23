@@ -88,6 +88,7 @@ const HomeBlockStyles = styled.div`
 
 function BlockContent({ block, raw }) {
   const layoutPosition = block.position;
+
   if (layoutPosition) {
     return (
       <div

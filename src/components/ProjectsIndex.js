@@ -18,6 +18,7 @@ const IndexStyles = styled.div`
     padding: 15px 30px;
     opacity: 0.25;
     border: 0.5px solid var(--black);
+    width: 33.33%;
   }
 
   .tab-list-active {

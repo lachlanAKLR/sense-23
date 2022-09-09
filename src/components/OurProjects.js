@@ -109,6 +109,10 @@ const OurProjectStyles = styled.div`
   p {
     padding-bottom: 30px;
   }
+
+  .gatsby-image-wrapper {
+    height: 450px;
+  }
   /* Mobile Styles */
   @media only screen and (max-width: 1100px) {
     padding: 30px 0;
@@ -134,6 +138,10 @@ const OurProjectStyles = styled.div`
     .op__project p {
       padding: 20px 0;
     }
+
+    .gatsby-image-wrapper {
+      height: 250px;
+    }
   }
 `;
 
@@ -157,7 +165,6 @@ function SingleProject({ project }) {
             alt={`image of ${project.title}`}
             style={{
               width: '100%',
-              height: 'auto',
               objectFit: 'cover',
             }}
           />

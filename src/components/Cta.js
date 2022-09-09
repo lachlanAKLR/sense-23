@@ -23,6 +23,11 @@ const CtaStyles = styled.div`
   .cross {
     padding-right: 20px;
   }
+
+  .gatsby-image-wrapper {
+    height: 450px;
+  }
+
   /* Mobile Styles */
   @media only screen and (max-width: 1100px) {
     padding: 60px 10px;
@@ -37,6 +42,10 @@ const CtaStyles = styled.div`
 
     .cta__col-right {
       width: 85%;
+    }
+
+    .gatsby-image-wrapper {
+      height: 230px;
     }
   }
 `;

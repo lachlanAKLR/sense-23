@@ -124,7 +124,7 @@ export default function HomeHero() {
                 <h4>ACN: {data.sanitySiteSettings.acn}</h4>
                 <h4>
                   <a href={data.sanitySiteSettings.instagram}>
-                    Insta:@senseconstuctions
+                    Insta:@senseconstructions
                   </a>
                 </h4>
                 <h4>

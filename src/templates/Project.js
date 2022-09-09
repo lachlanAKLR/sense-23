@@ -108,7 +108,7 @@ const ProjectStyles = styled.div`
       height: auto;
     }
 
-    .gatsby-image-wrapper {
+    .project__image .gatsby-image-wrapper {
       height: calc(100vh - 250px) !important;
     }
     .project__title {
