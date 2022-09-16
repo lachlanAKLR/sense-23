@@ -10,6 +10,15 @@ import Layouts from '../components/Layouts';
 import HeroText from '../components/HeroText';
 import LandingAnimation from '../components/LandingAnimation';
 
+export const Head = () => (
+  <>
+    <title>Sense Constructions — Construction Done Consciously</title>
+    <meta property="og:title" content="Sense Constructions" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Sense Constructions" />
+  </>
+);
+
 export default function HomePage({ transitionStatus, data }) {
   const ourProjects = data.ourProjects.nodes;
   const { layouts, _rawLayouts } = data.sanityHome;

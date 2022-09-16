@@ -27,6 +27,7 @@ const DropdownBlockStyles = styled.div`
     display: flex;
     justify-content: space-between;
     padding-bottom: 30px;
+    transition: padding-bottom 0.5s ease-in;
   }
 
   li:before {
@@ -38,20 +39,35 @@ const DropdownBlockStyles = styled.div`
     text-align: left;
   }
 
+  .drop__content {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: all;
+    transition: max-height 1s ease-out;
+    transition: opacity 1s ease-out 0.5s;
+  }
   .hidden {
-    height: 0px;
+    max-height: 0;
     opacity: 0;
     pointer-events: none;
+    transition: max-height 1s ease-in;
+    transition: opacity 1s ease-in 0.5s;
   }
 
   .remove-pad {
     padding-bottom: 0px;
+    transition: padding-bottom 0.5s ease-out;
   }
 
   button {
     font-family: EverettRegular;
     text-transform: none;
     font-size: 20px;
+  }
+
+  ul {
+    text-indent: -20px;
+    margin-left: 20px;
   }
 
   @media only screen and (max-width: 1100px) {
@@ -67,6 +83,10 @@ const DropdownBlockStyles = styled.div`
     }
     .drop__title button {
       font-size: 16px;
+    }
+    ul {
+      text-indent: -15px;
+      margin-left: 15px;
     }
   }
 `;

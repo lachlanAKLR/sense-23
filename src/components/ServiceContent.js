@@ -70,6 +70,9 @@ const ServiceContentStyles = styled.div`
     .half__grid {
       display: block;
     }
+    p {
+      text-indent: 30px;
+    }
   }
 `;
 

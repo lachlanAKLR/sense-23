@@ -60,7 +60,7 @@ const ProjectsGridStyles = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     z-index: 2;
     top: 0;
     left: 0;
@@ -68,6 +68,10 @@ const ProjectsGridStyles = styled.div`
 
   .grid__wrap-top h1 {
     width: 90%;
+  }
+
+  .grid__wrap-top h4 {
+    padding-top: 10px;
   }
 
   .grid__wrap-bottom h4 {
@@ -120,6 +124,16 @@ const ProjectsGridStyles = styled.div`
     grid-column-start: 5;
     grid-column-end: 13;
     padding-top: 150px;
+  }
+
+  .grid__project:nth-child(3) h3 {
+    padding-left: 30px;
+  }
+
+  .bullet {
+    position: relative;
+    left: -16px;
+    margin-right: -11px;
   }
 
   /* Mobile Styles */
@@ -176,7 +190,10 @@ function SingleProject({ project }) {
             </div>
             <div className="grid__wrap-bottom">
               <h4>Builder: {project.builder}</h4>
-              <h4>• {project.work}</h4>
+              <h4>
+                <span className="bullet">•</span>
+                {project.work}
+              </h4>
             </div>
           </div>
           <GatsbyImage

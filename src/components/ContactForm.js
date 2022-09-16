@@ -35,7 +35,11 @@ export default function ContactForm() {
               rows="5"
             />
           </label>
-          <button type="submit">Submit +</button>
+          <button type="submit">
+            <h4>
+              Submit <span className="page__link">+</span>
+            </h4>
+          </button>
         </form>
       </div>
     </div>

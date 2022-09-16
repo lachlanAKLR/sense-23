@@ -77,6 +77,12 @@ const FooterStyles = styled.div`
       position: relative;
       bottom: 0;
     }
+
+    .footer__links a,
+    .footer__links li {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 `;
 

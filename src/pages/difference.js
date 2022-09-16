@@ -12,6 +12,15 @@ const DifferenceStyles = styled.div`
   background-color: var(--grey);
 `;
 
+export const Head = () => (
+  <>
+    <title>Sense Constructions — Construction Done Consciously</title>
+    <meta property="og:title" content="Sense Constructions" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Sense Constructions" />
+  </>
+);
+
 export default function DifferencePage({ data, transitionStatus }) {
   const { content } = data;
   const { layouts, _rawLayouts } = content;

@@ -64,6 +64,7 @@ const ProjectStyles = styled.div`
   .project__desc-right {
     grid-column-start: 7;
     grid-column-end: 12;
+    max-width: 570px;
   }
 
   li {
@@ -121,6 +122,7 @@ const ProjectStyles = styled.div`
       position: relative;
       top: auto;
       padding-bottom: 30px;
+      z-index: 1;
     }
 
     .project__credit {
@@ -136,9 +138,22 @@ const ProjectStyles = styled.div`
   }
 `;
 
+export const Head = () => (
+  <>
+    <title>Sense Constructions — Construction Done Consciously</title>
+    <meta property="og:title" content="Sense Constructions" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Sense Constructions" />
+  </>
+);
+
 export default function ProjectPage({ data }) {
   const moreProjects = data.moreProjects.nodes;
   const { title } = data.project;
+  const isExtent = data.project.extent !== null;
+  const isBudget = data.project.budget !== null;
+  const isCompletion = data.project.completion !== null;
+
   return (
     <>
       <GlobalStyles />
@@ -206,20 +221,44 @@ export default function ProjectPage({ data }) {
                       <h4>Builder: {data.project.builder}</h4>
                     </li>
                     <li>
-                      <h4>{data.project.work}</h4>
+                      <h4>Role: {data.project.work}</h4>
                     </li>
                     <li>
                       <h4>Location: {data.project.location}</h4>
                     </li>
-                    <li>
-                      <h4>Project Budget: {data.project.budget}</h4>
-                    </li>
-                    <li>
-                      <h4>Extent: {data.project.extent}</h4>
-                    </li>
-                    <li>
-                      <h4>{data.project.completion}</h4>
-                    </li>
+                    {isBudget
+                      ? React.createElement(
+                          'li',
+                          {},
+                          React.createElement(
+                            'h4',
+                            {},
+                            `Budget: ${data.project.budget}`
+                          )
+                        )
+                      : ` `}
+                    {isExtent
+                      ? React.createElement(
+                          'li',
+                          {},
+                          React.createElement(
+                            'h4',
+                            {},
+                            `Extent: ${data.project.extent}`
+                          )
+                        )
+                      : ` `}
+                    {isCompletion
+                      ? React.createElement(
+                          'li',
+                          {},
+                          React.createElement(
+                            'h4',
+                            {},
+                            `Project Completion Date: ${data.project.completion}`
+                          )
+                        )
+                      : ` `}
                   </ul>
                 </div>
                 <div className="project__desc-right">
@@ -227,7 +266,7 @@ export default function ProjectPage({ data }) {
                 </div>
               </div>
             </div>
-            <MoreProjects moreProjects={moreProjects} />
+            <MoreProjects moreProjects={moreProjects} data={data.project} />
           </div>
         </div>
       </ProjectStyles>

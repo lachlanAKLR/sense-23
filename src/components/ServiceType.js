@@ -61,6 +61,8 @@ const ServiceTypeStyles = styled.div`
 
   ul {
     padding-bottom: 20px;
+    text-indent: -20px;
+    margin-left: 20px;
   }
 
   .service__content p:first-child {
@@ -68,7 +70,7 @@ const ServiceTypeStyles = styled.div`
   }
 
   .service__content p {
-    text-indent: 40px;
+    text-indent: 60px;
   }
 
   .mobile__header {
@@ -138,6 +140,14 @@ const ServiceTypeStyles = styled.div`
     .service__button {
       position: absolute;
       right: 30px;
+    }
+    .service__content p {
+      text-indent: 30px;
+    }
+
+    ul {
+      text-indent: -15px;
+      margin-left: 15px;
     }
   }
 `;

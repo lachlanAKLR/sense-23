@@ -73,6 +73,7 @@ const LandingAnimationStyles = styled.div`
     }
     .landing__row {
       width: 200%;
+      gap: 0;
     }
     h1 {
       font-family: Druk;

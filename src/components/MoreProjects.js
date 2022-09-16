@@ -146,7 +146,24 @@ function SingleProject({ project }) {
   );
 }
 
-export default function MoreProjects({ moreProjects }) {
+export default function MoreProjects({ moreProjects, data }) {
+  const thisId = data.id;
+  const filterProjects = moreProjects.filter(
+    (project) => project.id !== thisId
+  );
+
+  const shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
+  const randProjects = shuffle(filterProjects);
+
   return (
     <MoreProjectStyles>
       <div className="mp__title">
@@ -154,7 +171,7 @@ export default function MoreProjects({ moreProjects }) {
       </div>
       <div className="mp__wrapper">
         <div className="mp__inner">
-          {moreProjects.slice(0, 4).map((project) => (
+          {randProjects.slice(0, 4).map((project) => (
             <SingleProject key={project.id} project={project} />
           ))}
         </div>

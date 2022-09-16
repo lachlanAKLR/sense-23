@@ -9,6 +9,15 @@ import ProjectsInfo from '../components/ProjectsInfo';
 import LandingAnimation from '../components/LandingAnimation';
 import ColourCta from '../components/ColourCta';
 
+export const Head = () => (
+  <>
+    <title>Sense Constructions — Construction Done Consciously</title>
+    <meta property="og:title" content="Sense Constructions" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Sense Constructions" />
+  </>
+);
+
 export default function ProjectsPage({ data, transitionStatus }) {
   const commercialProjects = data.commercialProjects.nodes;
   const civilProjects = data.civilProjects.nodes;
@@ -51,6 +60,8 @@ export const query = graphql`
         work
         location
         extent
+        description
+        completion
         image {
           asset {
             gatsbyImageData
@@ -73,6 +84,8 @@ export const query = graphql`
         work
         location
         extent
+        description
+        completion
         image {
           asset {
             gatsbyImageData
@@ -98,6 +111,8 @@ export const query = graphql`
         work
         location
         extent
+        description
+        completion
         image {
           asset {
             gatsbyImageData

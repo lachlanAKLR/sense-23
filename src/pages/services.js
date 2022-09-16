@@ -8,6 +8,15 @@ import LandingAnimation from '../components/LandingAnimation';
 import ServiceType from '../components/ServiceType';
 import ColourCta from '../components/ColourCta';
 
+export const Head = () => (
+  <>
+    <title>Sense Constructions — Construction Done Consciously</title>
+    <meta property="og:title" content="Sense Constructions" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Sense Constructions" />
+  </>
+);
+
 export default function ServicesPage({ data, transitionStatus }) {
   const { content } = data;
   const title = content.pageTitle;

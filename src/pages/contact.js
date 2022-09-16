@@ -75,6 +75,15 @@ const ContactStyles = styled.div`
   }
 `;
 
+export const Head = () => (
+  <>
+    <title>Sense Constructions — Construction Done Consciously</title>
+    <meta property="og:title" content="Sense Constructions" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Sense Constructions" />
+  </>
+);
+
 export default function ContactPage({ data, transitionStatus }) {
   const { title } = data.contact;
   return (

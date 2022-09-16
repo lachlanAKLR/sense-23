@@ -1,37 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
-// import remington from '../assets/fonts/LTCRemington.woff';
-// import everettMedium from '../assets/fonts/TWKEverett-Medium-web.woff';
-// import everettRegular from '../assets/fonts/TWKEverett-Regular-web.woff';
-// import everettItalic from '../assets/fonts/TWKEverett-RegularItalic-web.woff';
-// import druk from '../assets/fonts/DrukWide-Bold.woff';
-
 const GlobalStyles = createGlobalStyle`
 
-  /* @font-face {
-    font-family: Remington;
-    src: url(${remington}); 
-   }
-
-  @font-face {
-    font-family: EverettMedium;
-    src: url(${everettMedium});  
-   }
-
-  @font-face {
-  font-family: EverettRegular; 
-  src: url(${everettRegular});   
-  } 
-
-  @font-face {
-  font-family: EverettItalic; 
-  src: url(${everettItalic});  
-  } 
-
-  @font-face {
-  font-family: Druk; 
-  src: url(${druk});  
-  }  */
 
   .site__grid {
     display: grid;
@@ -68,7 +38,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: normal;
   }
 
-  h3, .tab-list-item {
+  h3, .tab-list-item, .title__button {
     font-size: 24px;
     line-height: 29px;
     font-weight: normal;
@@ -194,19 +164,19 @@ const GlobalStyles = createGlobalStyle`
   .service__content {
     -ms-overflow-style: none; 
     scrollbar-width: none;  
-  }
+  } 
 
   .hidden {
-    height: 0px;
+    max-height: 0px;
     opacity: 0;
     pointer-events: none;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out .75s;
     overflow-y: scroll;
   }
 
   .visible {
-    height: auto;
-    transition: all ease-in-out .3s;
+    max-height: 2000px;
+    transition: all ease-in-out .75s;
   }
 
 

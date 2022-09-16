@@ -36,6 +36,7 @@ const IndexStyles = styled.div`
 
   .index__details {
     padding-bottom: 60px;
+    transition: all ease 0.5s;
   }
 
   li:nth-child(1) {
@@ -84,9 +85,25 @@ const IndexStyles = styled.div`
     grid-column-end: 11;
   }
 
-  .hide {
-    display: none !important;
+  .show {
+    opacity: 1;
+    max-height: 2000px;
+    pointer-events: all;
   }
+
+  .hide {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+    pointer-events: none;
+  }
+
+  .title__button {
+    font-family: EverettRegular;
+    text-transform: none;
+    text-align: left;
+  }
+
   /* Mobile Styles */
   @media only screen and (max-width: 1100px) {
     padding: 10px;
@@ -148,6 +165,7 @@ const IndexStyles = styled.div`
 `;
 
 function IndexItem({ project }) {
+  console.log(project);
   const [isActive, setIsActive] = useState(false);
   const handleClick = (event) => {
     setIsActive((current) => !current);
@@ -159,7 +177,9 @@ function IndexItem({ project }) {
         className="index__details site__grid"
       >
         <li>
-          <h3>{project.title}</h3>
+          <button type="button" onClick={handleClick}>
+            <h3 className="title__button">{project.title}</h3>
+          </button>
         </li>
         <li>
           <h4>{project.builder}</h4>
@@ -168,7 +188,7 @@ function IndexItem({ project }) {
           <h4>{project.location}</h4>
         </li>
         <li>
-          <h4>2022</h4>
+          <h4>{project.completion}</h4>
         </li>
         <li>
           <h4>
@@ -180,14 +200,12 @@ function IndexItem({ project }) {
       </ul>
       <div
         className={
-          isActive ? 'index__more site__grid' : 'index__more site__grid  hide'
+          isActive
+            ? 'index__more site__grid show'
+            : 'index__more site__grid  hide'
         }
       >
-        <p>
-          A very brief description of what the project is, maybe how long it was
-          in the works for, size of it, what it involves, how Sense applied
-          their expertise, etc, etc.
-        </p>
+        <p>{project.description}</p>
         <h4>{project.extent}</h4>
       </div>
       <div
