@@ -64,7 +64,7 @@ const ContactStyles = styled.div`
       padding-bottom: 20px;
     }
     .contact__top {
-      padding-bottom: 20px;
+      padding-bottom: 50px;
     }
     .gatsby-image-wrapper {
       width: 60% !important;

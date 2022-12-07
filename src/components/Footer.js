@@ -76,6 +76,7 @@ const FooterStyles = styled.div`
     .footer__back {
       position: relative;
       bottom: 0;
+      padding-top: 15px;
     }
 
     .footer__links a,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Logo from '../images/Sense_Logo.svg';
@@ -18,11 +18,32 @@ const HomeHeroStyles = styled.div`
 
   .home__logo svg {
     width: 100%;
+    ${(props) =>
+      props.isWhite
+        ? css`
+            filter: invert(93%) sepia(0%) saturate(7486%) hue-rotate(46deg)
+              brightness(112%) contrast(100%);
+          `
+        : css`
+            filter: none;
+          `};
   }
 
   .home__info {
     grid-column-start: 1;
     grid-column: span 4;
+  }
+
+  h4,
+  a {
+    ${(props) =>
+      props.isWhite
+        ? css`
+            color: white;
+          `
+        : css`
+            color: black;
+          `};
   }
 
   .home__landingtext {
@@ -93,6 +114,7 @@ export default function HomeHero() {
         }
         landingtext
         herotext
+        whiteText
       }
       sanitySiteSettings {
         abn
@@ -103,8 +125,10 @@ export default function HomeHero() {
     }
   `);
 
+  const isWhite = data.sanityHome.whiteText === true;
+
   return (
-    <HomeHeroStyles>
+    <HomeHeroStyles isWhite={isWhite}>
       <div className="home__hero-image-wrapper">
         <div className="home__hero-image-inner">
           <GatsbyImage

@@ -26,8 +26,6 @@ const DropdownBlockStyles = styled.div`
   .drop__title {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 30px;
-    transition: padding-bottom 0.5s ease-in;
   }
 
   li:before {
@@ -43,20 +41,18 @@ const DropdownBlockStyles = styled.div`
     max-height: 500px;
     opacity: 1;
     pointer-events: all;
-    transition: max-height 1s ease-out;
-    transition: opacity 1s ease-out 0.5s;
-  }
-  .hidden {
-    max-height: 0;
-    opacity: 0;
-    pointer-events: none;
-    transition: max-height 1s ease-in;
-    transition: opacity 1s ease-in 0.5s;
+    padding-top: 15px;
+    transition: 0.15s opacity 0.5s ease-in, max-height 0.75s ease-in,
+      padding-top 0.75s ease-in;
   }
 
-  .remove-pad {
-    padding-bottom: 0px;
-    transition: padding-bottom 0.5s ease-out;
+  .collapse {
+    max-height: 0px;
+    opacity: 0;
+    padding-top: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-out, max-height 0.75s ease-out,
+      padding-top 0.75s ease-out;
   }
 
   button {
@@ -98,7 +94,7 @@ function DropdownItem({ dropdown }) {
   };
   return (
     <button type="button" className="drop__item" onClick={handleClick}>
-      <div className={isActive ? 'drop__title' : 'drop__title remove-pad'}>
+      <div className="drop__title">
         <p>
           <button type="button">{dropdown.heading}</button>
         </p>
@@ -106,7 +102,7 @@ function DropdownItem({ dropdown }) {
           <button type="button">{isActive ? '-' : '+'}</button>
         </h4>
       </div>
-      <div className={isActive ? 'drop__content' : 'drop__content hidden'}>
+      <div className={isActive ? 'drop__content' : 'drop__content collapse'}>
         <PortableText value={dropdown.content} />
       </div>
     </button>

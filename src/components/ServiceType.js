@@ -119,6 +119,7 @@ const ServiceTypeStyles = styled.div`
     .service__inner {
       display: flex;
       flex-direction: column;
+      padding: 15px;
     }
     .service__title {
       width: 70%;
