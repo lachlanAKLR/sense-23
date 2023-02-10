@@ -41,6 +41,10 @@ const TextImageStyles = styled.div`
     text-indent: 0;
   }
 
+  .gatsby-image-wrapper {
+    max-height: 90vh;
+  }
+
   @media only screen and (max-width: 1100px) {
     padding: 60px 10px 30px 10px;
     .site__grid {

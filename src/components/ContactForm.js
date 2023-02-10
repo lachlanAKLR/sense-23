@@ -4,7 +4,7 @@ export default function ContactForm() {
   return (
     <div className="contact__form">
       <div className="contact__form-inner">
-        <form method="post" action="#">
+        <form method="post" action="https://formspree.io/f/xknajbyq">
           <label>
             <input
               placeholder="First Name*"

@@ -126,7 +126,20 @@ const ProjectsGridStyles = styled.div`
     padding-top: 150px;
   }
 
-  .grid__project:nth-child(3) h3 {
+  .grid__project:nth-child(7) {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    padding-top: 150px;
+  }
+
+  .grid__project:nth-child(8) {
+    grid-column-start: 5;
+    grid-column-end: 10;
+    padding-top: 150px;
+  }
+
+  .grid__project:nth-child(3) h3,
+  .grid__project:nth-child(7) h3 {
     padding-left: 30px;
   }
 
