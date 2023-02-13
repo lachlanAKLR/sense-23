@@ -165,7 +165,7 @@ export default function HomeHero() {
           </div>
           <div className="home__bottom site__grid">
             <div className="home__construction">
-              <h4>Contruction</h4>
+              <h4>Construction</h4>
             </div>
             <div className="home__done">
               <h4>Done Consciously</h4>
