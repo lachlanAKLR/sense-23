@@ -18,6 +18,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-transition-link',
     'gatsby-plugin-scroll-reveal',
+    'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
