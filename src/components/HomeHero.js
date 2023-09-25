@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { motion } from 'framer-motion';
 
 import Logo from '../images/Sense_Logo.svg';
 
@@ -54,7 +55,6 @@ const HomeHeroStyles = styled.div`
   }
 
   .home__middle {
-    opacity: 0;
     padding-top: 100px;
   }
 
@@ -67,7 +67,6 @@ const HomeHeroStyles = styled.div`
   }
 
   .home__bottom {
-    opacity: 0;
     width: 100%;
     position: relative;
     bottom: 80px;
@@ -78,7 +77,11 @@ const HomeHeroStyles = styled.div`
     padding: 60px 30px 150px 30px;
   }
 
-  .sense__logo {
+  .logo__wrapper {
+    opacity: 0;
+  }
+
+  .middle__wrapper {
     opacity: 0;
   }
 
@@ -141,36 +144,72 @@ export default function HomeHero() {
             alt="Landing Image"
           />
           <div className="home__logo">
-            <Logo className="sense__logo" />
-            <div className="home__middle site__grid">
-              <div className="home__info">
-                <h4>Sense Constructions</h4>
-                <h4>ABN: {data.sanitySiteSettings.abn}</h4>
-                <h4>ACN: {data.sanitySiteSettings.acn}</h4>
-                <h4>
-                  <a href={data.sanitySiteSettings.instagram}>
-                    Insta:@senseconstructions
-                  </a>
-                </h4>
-                <h4>
-                  <a href={data.sanitySiteSettings.linkedin}>
-                    linkedin:sense-constructions
-                  </a>
-                </h4>
+            <motion.div
+              className="logo__wrapper"
+              key="logo"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1,
+              }}
+            >
+              <Logo className="sense__logo" />
+            </motion.div>
+            <motion.div
+              className="middle__wrapper"
+              key="logo"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 1 }}
+              transition={{
+                duration: 1,
+                delay: 1.5,
+              }}
+            >
+              <div className="home__middle site__grid">
+                <div className="home__info">
+                  <h4>Sense Constructions</h4>
+                  <h4>ABN: {data.sanitySiteSettings.abn}</h4>
+                  <h4>ACN: {data.sanitySiteSettings.acn}</h4>
+                  <h4>
+                    <a href={data.sanitySiteSettings.instagram}>
+                      Insta:@senseconstructions
+                    </a>
+                  </h4>
+                  <h4>
+                    <a href={data.sanitySiteSettings.linkedin}>
+                      linkedin:sense-constructions
+                    </a>
+                  </h4>
+                </div>
+                <div className="home__landingtext">
+                  <h4>{data.sanityHome.landingtext}</h4>
+                </div>
               </div>
-              <div className="home__landingtext">
-                <h4>{data.sanityHome.landingtext}</h4>
+            </motion.div>
+          </div>
+          <motion.div
+            className="bottom__wrapper"
+            key="logo"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{
+              duration: 1,
+              delay: 1.75,
+            }}
+          >
+            <div className="home__bottom site__grid">
+              <div className="home__construction">
+                <h4>Construction</h4>
+              </div>
+              <div className="home__done">
+                <h4>Done Consciously</h4>
               </div>
             </div>
-          </div>
-          <div className="home__bottom site__grid">
-            <div className="home__construction">
-              <h4>Construction</h4>
-            </div>
-            <div className="home__done">
-              <h4>Done Consciously</h4>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </HomeHeroStyles>

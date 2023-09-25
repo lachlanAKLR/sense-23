@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
+import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
 import GlobalStyles from '../styles/GlobalStyles';
 import Nav from '../components/Nav';
 import ContactForm from '../components/ContactForm';
-import LandingAnimation from '../components/LandingAnimation';
+import Animation from '../components/Animation';
 
 const ContactStyles = styled.div`
   padding: 140px 30px 100px 30px;
@@ -84,13 +85,13 @@ export const Head = () => (
   </>
 );
 
-export default function ContactPage({ data, transitionStatus }) {
+export default function ContactPage({ data }) {
   const { title } = data.contact;
   return (
     <>
       <GlobalStyles />
-      <LandingAnimation transitionStatus={transitionStatus} />
       <Nav title={title} />
+      <Animation />
       <ContactStyles>
         <div
           data-sal="fade"

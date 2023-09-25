@@ -4,7 +4,7 @@ import GlobalStyles from '../styles/GlobalStyles';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import ServiceContent from '../components/ServiceContent';
-import LandingAnimation from '../components/LandingAnimation';
+import Animation from '../components/Animation';
 import ServiceType from '../components/ServiceType';
 import ColourCta from '../components/ColourCta';
 
@@ -17,7 +17,7 @@ export const Head = () => (
   </>
 );
 
-export default function ServicesPage({ data, transitionStatus }) {
+export default function ServicesPage({ data }) {
   const { content } = data;
   const title = content.pageTitle;
   const { firstServices } = content;
@@ -31,7 +31,7 @@ export default function ServicesPage({ data, transitionStatus }) {
   return (
     <>
       <GlobalStyles />
-      <LandingAnimation transitionStatus={transitionStatus} />
+      <Animation />
       <Nav title={title} />
       <ServiceContent content={content} />
       <ServiceType

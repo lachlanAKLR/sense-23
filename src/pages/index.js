@@ -25,7 +25,7 @@ export default function HomePage({ transitionStatus, data }) {
   return (
     <>
       <GlobalStyles />
-      <LandingAnimation transitionStatus={transitionStatus} />
+      {/* <LandingAnimation /> */}
       <Nav />
       <HomeHero />
       <HeroText />

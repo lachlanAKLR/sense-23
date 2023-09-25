@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 import ProjectsGrid from '../components/ProjectsGrid';
 import ProjectsIndex from '../components/ProjectsIndex';
 import ProjectsInfo from '../components/ProjectsInfo';
-import LandingAnimation from '../components/LandingAnimation';
+import Animation from '../components/Animation';
 import ColourCta from '../components/ColourCta';
 
 export const Head = () => (
@@ -27,7 +27,7 @@ export default function ProjectsPage({ data, transitionStatus }) {
   return (
     <>
       <GlobalStyles />
-      <LandingAnimation transitionStatus={transitionStatus} />
+      <Animation />
       <Nav title={title} />
       <ProjectsInfo />
       <ProjectsGrid
