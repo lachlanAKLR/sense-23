@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import TransitionLink from 'gatsby-plugin-transition-link';
 import Footer from './Footer';
 
 const NavStyles = styled.div`
@@ -210,77 +209,27 @@ export default function Nav({ title }) {
               <ul>
                 <li>
                   <h1>
-                    <TransitionLink
-                      to="/"
-                      exit={{
-                        length: 1,
-                      }}
-                      entry={{
-                        length: 1.75,
-                      }}
-                    >
-                      Home
-                    </TransitionLink>
+                    <Link to="/">Home</Link>
                   </h1>
                 </li>
                 <li>
                   <h1>
-                    <TransitionLink
-                      to="/services"
-                      exit={{
-                        length: 1,
-                      }}
-                      entry={{
-                        length: 1.75,
-                      }}
-                    >
-                      Our Services
-                    </TransitionLink>
+                    <Link to="/services">Our Services</Link>
                   </h1>
                 </li>
                 <li>
                   <h1>
-                    <TransitionLink
-                      to="/difference"
-                      exit={{
-                        length: 1,
-                      }}
-                      entry={{
-                        length: 1.75,
-                      }}
-                    >
-                      Our Difference
-                    </TransitionLink>
+                    <Link to="/difference">Our Difference</Link>
                   </h1>
                 </li>
                 <li>
                   <h1>
-                    <TransitionLink
-                      to="/projects"
-                      exit={{
-                        length: 1,
-                      }}
-                      entry={{
-                        length: 1.75,
-                      }}
-                    >
-                      Our Projects
-                    </TransitionLink>
+                    <Link to="/projects">Our Projects</Link>
                   </h1>
                 </li>
                 <li>
                   <h1>
-                    <TransitionLink
-                      to="/contact"
-                      exit={{
-                        length: 1,
-                      }}
-                      entry={{
-                        length: 1.75,
-                      }}
-                    >
-                      Contact Us
-                    </TransitionLink>
+                    <Link to="/contact">Contact Us</Link>
                   </h1>
                 </li>
               </ul>
@@ -326,77 +275,27 @@ export default function Nav({ title }) {
             <ul>
               <li>
                 <h1>
-                  <TransitionLink
-                    to="/"
-                    exit={{
-                      length: 1,
-                    }}
-                    entry={{
-                      length: 1.75,
-                    }}
-                  >
-                    Home
-                  </TransitionLink>
+                  <Link to="/">Home</Link>
                 </h1>
               </li>
               <li>
                 <h1>
-                  <TransitionLink
-                    to="/services"
-                    exit={{
-                      length: 1,
-                    }}
-                    entry={{
-                      length: 1.75,
-                    }}
-                  >
-                    Our Services
-                  </TransitionLink>
+                  <Link to="/services">Our Services</Link>
                 </h1>
               </li>
               <li>
                 <h1>
-                  <TransitionLink
-                    to="/difference"
-                    exit={{
-                      length: 1,
-                    }}
-                    entry={{
-                      length: 1.75,
-                    }}
-                  >
-                    Our Difference
-                  </TransitionLink>
+                  <Link to="/difference">Our Difference</Link>
                 </h1>
               </li>
               <li>
                 <h1>
-                  <TransitionLink
-                    to="/projects"
-                    exit={{
-                      length: 1,
-                    }}
-                    entry={{
-                      length: 1.75,
-                    }}
-                  >
-                    Our Projects
-                  </TransitionLink>
+                  <Link to="/projects">Our Projects</Link>
                 </h1>
               </li>
               <li>
                 <h1>
-                  <TransitionLink
-                    to="/contact"
-                    exit={{
-                      length: 1,
-                    }}
-                    entry={{
-                      length: 1.75,
-                    }}
-                  >
-                    Contact Us
-                  </TransitionLink>
+                  <Link to="/contact">Contact Us</Link>
                 </h1>
               </li>
             </ul>
